@@ -10,7 +10,7 @@
 #define LakeDefines_h
 
 #define CareD_Lake_MainScreenBounds [UIScreen mainScreen].bounds
-#define CareD_Lake_COLOR_AbsintheGreen [UIColor colorWithRed:120/255.f green:192/255.f blue:51/255.f alpha:1]
+#define CareD_Lake_COLOR_AbsintheGreen [UIColor colorWithRed:136/255.f green:189/255.f blue:65/255.f alpha:1]
 
 
 //头文件
