@@ -1,0 +1,20 @@
+//
+//  CareDPrefixHeader.pch
+//  CareD
+//
+//  Created by LakesMac on 15/11/9.
+//  Copyright © 2015年 Tec-Erica. All rights reserved.
+//
+
+#ifndef CareDPrefixHeader_pch
+#define CareDPrefixHeader_pch
+
+//headers By Lake
+#import "LakeDefines.h"
+
+//headers By YHY
+
+//headers By CLJ
+
+
+#endif /* CareDPrefixHeader_pch */

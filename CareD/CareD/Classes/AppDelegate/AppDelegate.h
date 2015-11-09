@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  TecEricaTest
+//  CareD
 //
 //  Created by LakesMac on 15/11/9.
-//  Copyright © 2015年 Lake. All rights reserved.
+//  Copyright © 2015年 Tec-Erica. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

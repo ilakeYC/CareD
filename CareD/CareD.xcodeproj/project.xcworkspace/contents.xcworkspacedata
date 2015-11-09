@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TecEricaTest.xcodeproj">
+      location = "self:CareD.xcodeproj">
    </FileRef>
 </Workspace>
