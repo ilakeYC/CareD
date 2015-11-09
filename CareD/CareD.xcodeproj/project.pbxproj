@@ -27,6 +27,8 @@
 		9F1202271BF03F79002C508C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9F1202351BF03FA4002C508C /* CareDPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CareDPrefixHeader.pch; sourceTree = "<group>"; };
 		9F1202371BF03FD1002C508C /* LakeDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LakeDefines.h; sourceTree = "<group>"; };
+		9F1202381BF04879002C508C /* GreenDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GreenDefines.h; sourceTree = "<group>"; };
+		9F1202391BF0488B002C508C /* HYDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYDefines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				9F1202371BF03FD1002C508C /* LakeDefines.h */,
+				9F1202381BF04879002C508C /* GreenDefines.h */,
+				9F1202391BF0488B002C508C /* HYDefines.h */,
 			);
 			path = Defines;
 			sourceTree = "<group>";
