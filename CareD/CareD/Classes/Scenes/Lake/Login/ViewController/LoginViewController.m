@@ -9,8 +9,9 @@
 #import "LoginViewController.h"
 #import "LoginView.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UITextFieldDelegate>
 @property (nonatomic,strong) LoginView *loginView;
+
 @end
 
 @implementation LoginViewController
@@ -22,22 +23,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.loginView.nameTextField.delegate = self;
+    self.loginView.passwordTextField.delegate = self;
+    
+    [self.loginView.registerButton addTarget:self action:@selector(registerButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.loginView.loginButton addTarget:self action:@selector(loginButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 登陆按钮点击事件
+- (void)loginButtonAction:(UIButton *)sender {
+    [self.loginView shake];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - 注册按钮点击事件
+- (void)registerButtonAction:(UIButton *)sender {
+    RegisterViewController *registerVC = [RegisterViewController new];
+    registerVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentViewController:registerVC animated:YES completion:^{
+        
+    }];
 }
-*/
-
+#pragma mark - textField delegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (self.loginView.nameTextField.isEditing) {
+        //是用户名输入框正在响应
+        [self.loginView.passwordTextField becomeFirstResponder];
+    } else {
+        //是密码输入框正在响应
+        [self.loginView endEditing:YES];
+    }
+    return YES;
+}
 @end

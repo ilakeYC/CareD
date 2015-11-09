@@ -19,16 +19,25 @@
 		9F1202701BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202531BF04FCB002C508C /* 请删除.rtf */; };
 		9F1202711BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202551BF04FCB002C508C /* 请删除.rtf */; };
 		9F1202721BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202571BF04FCB002C508C /* 请删除.rtf */; };
-		9F1202731BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202591BF04FCB002C508C /* 请删除.rtf */; };
 		9F1202741BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F12025D1BF04FCB002C508C /* 请删除.rtf */; };
 		9F1202751BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F12025F1BF04FCB002C508C /* 请删除.rtf */; };
 		9F1202761BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202621BF04FCB002C508C /* 请删除.rtf */; };
 		9F1202771BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202641BF04FCB002C508C /* 请删除.rtf */; };
 		9F1202781BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202671BF04FCB002C508C /* 请删除.rtf */; };
 		9F1202791BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202691BF04FCB002C508C /* 请删除.rtf */; };
-		9F12027A1BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F12026B1BF04FCB002C508C /* 请删除.rtf */; };
 		9F1202841BF06360002C508C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1202831BF06360002C508C /* LoginViewController.m */; };
 		9F1202871BF0636D002C508C /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1202861BF0636D002C508C /* LoginView.m */; };
+		9F1202951BF06B7A002C508C /* loginImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F12028A1BF06B7A002C508C /* loginImage@2x.png */; };
+		9F1202961BF06B7A002C508C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F12028D1BF06B7A002C508C /* logo.png */; };
+		9F1202971BF06B7A002C508C /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F12028E1BF06B7A002C508C /* logo@2x.png */; };
+		9F1202981BF06B7A002C508C /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F12028F1BF06B7A002C508C /* logo@3x.png */; };
+		9F1202991BF06B7A002C508C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202911BF06B7A002C508C /* logo.png */; };
+		9F12029A1BF06B7A002C508C /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202921BF06B7A002C508C /* logo@2x.png */; };
+		9F12029B1BF06B7A002C508C /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202931BF06B7A002C508C /* logo@3x.png */; };
+		9F1202A01BF06D1D002C508C /* UIShakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F12029F1BF06D1D002C508C /* UIShakeView.m */; };
+		9F2D91131BF0936F00BB0330 /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D91121BF0936F00BB0330 /* RegisterView.m */; };
+		9F2D91161BF0937A00BB0330 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D91151BF0937A00BB0330 /* RegisterViewController.m */; };
+		9F2D91191BF0976B00BB0330 /* RegisterImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F2D91181BF0976B00BB0330 /* RegisterImage@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,18 +60,30 @@
 		9F1202531BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
 		9F1202551BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
 		9F1202571BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
-		9F1202591BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
 		9F12025D1BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
 		9F12025F1BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
 		9F1202621BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
 		9F1202641BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
 		9F1202671BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
 		9F1202691BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
-		9F12026B1BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
 		9F1202821BF06360002C508C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9F1202831BF06360002C508C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9F1202851BF0636D002C508C /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		9F1202861BF0636D002C508C /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		9F12028A1BF06B7A002C508C /* loginImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginImage@2x.png"; sourceTree = "<group>"; };
+		9F12028D1BF06B7A002C508C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		9F12028E1BF06B7A002C508C /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		9F12028F1BF06B7A002C508C /* logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@3x.png"; sourceTree = "<group>"; };
+		9F1202911BF06B7A002C508C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		9F1202921BF06B7A002C508C /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		9F1202931BF06B7A002C508C /* logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@3x.png"; sourceTree = "<group>"; };
+		9F12029E1BF06D1D002C508C /* UIShakeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIShakeView.h; sourceTree = "<group>"; };
+		9F12029F1BF06D1D002C508C /* UIShakeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIShakeView.m; sourceTree = "<group>"; };
+		9F2D91111BF0936F00BB0330 /* RegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
+		9F2D91121BF0936F00BB0330 /* RegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
+		9F2D91141BF0937A00BB0330 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		9F2D91151BF0937A00BB0330 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		9F2D91181BF0976B00BB0330 /* RegisterImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RegisterImage@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,7 +232,7 @@
 		9F1202581BF04FCB002C508C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9F1202591BF04FCB002C508C /* 请删除.rtf */,
+				9F1202881BF06B7A002C508C /* Images */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -255,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				9F12027B1BF06348002C508C /* Login */,
+				9F2D910A1BF0935700BB0330 /* Register */,
 				9F1202611BF04FCB002C508C /* View */,
 				9F1202631BF04FCB002C508C /* ViewController */,
 			);
@@ -305,7 +327,7 @@
 		9F12026A1BF04FCB002C508C /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				9F12026B1BF04FCB002C508C /* 请删除.rtf */,
+				9F12029D1BF06D1D002C508C /* UIShakeView */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -335,6 +357,97 @@
 				9F1202831BF06360002C508C /* LoginViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9F1202881BF06B7A002C508C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9F2D91171BF0976B00BB0330 /* Register */,
+				9F1202891BF06B7A002C508C /* Login */,
+				9F12028B1BF06B7A002C508C /* Logo */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		9F1202891BF06B7A002C508C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9F12028A1BF06B7A002C508C /* loginImage@2x.png */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9F12028B1BF06B7A002C508C /* Logo */ = {
+			isa = PBXGroup;
+			children = (
+				9F12028C1BF06B7A002C508C /* Black */,
+				9F1202901BF06B7A002C508C /* White */,
+			);
+			path = Logo;
+			sourceTree = "<group>";
+		};
+		9F12028C1BF06B7A002C508C /* Black */ = {
+			isa = PBXGroup;
+			children = (
+				9F12028D1BF06B7A002C508C /* logo.png */,
+				9F12028E1BF06B7A002C508C /* logo@2x.png */,
+				9F12028F1BF06B7A002C508C /* logo@3x.png */,
+			);
+			path = Black;
+			sourceTree = "<group>";
+		};
+		9F1202901BF06B7A002C508C /* White */ = {
+			isa = PBXGroup;
+			children = (
+				9F1202911BF06B7A002C508C /* logo.png */,
+				9F1202921BF06B7A002C508C /* logo@2x.png */,
+				9F1202931BF06B7A002C508C /* logo@3x.png */,
+			);
+			path = White;
+			sourceTree = "<group>";
+		};
+		9F12029D1BF06D1D002C508C /* UIShakeView */ = {
+			isa = PBXGroup;
+			children = (
+				9F12029E1BF06D1D002C508C /* UIShakeView.h */,
+				9F12029F1BF06D1D002C508C /* UIShakeView.m */,
+			);
+			path = UIShakeView;
+			sourceTree = "<group>";
+		};
+		9F2D910A1BF0935700BB0330 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				9F2D910B1BF0935700BB0330 /* View */,
+				9F2D910D1BF0935700BB0330 /* ViewController */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		9F2D910B1BF0935700BB0330 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F2D91111BF0936F00BB0330 /* RegisterView.h */,
+				9F2D91121BF0936F00BB0330 /* RegisterView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F2D910D1BF0935700BB0330 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9F2D91141BF0937A00BB0330 /* RegisterViewController.h */,
+				9F2D91151BF0937A00BB0330 /* RegisterViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9F2D91171BF0976B00BB0330 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				9F2D91181BF0976B00BB0330 /* RegisterImage@2x.png */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +481,7 @@
 				TargetAttributes = {
 					9F1202061BF03F4A002C508C = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 75693XATVN;
 					};
 				};
 			};
@@ -394,22 +508,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F12029A1BF06B7A002C508C /* logo@2x.png in Resources */,
 				9F1202751BF04FCB002C508C /* 请删除.rtf in Resources */,
 				9F1202721BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F1202991BF06B7A002C508C /* logo.png in Resources */,
 				9F12026F1BF04FCB002C508C /* 请删除.rtf in Resources */,
 				9F1202781BF04FCB002C508C /* 请删除.rtf in Resources */,
 				9F12026D1BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F1202971BF06B7A002C508C /* logo@2x.png in Resources */,
 				9F12021D1BF03F4A002C508C /* LaunchScreen.storyboard in Resources */,
-				9F12027A1BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F12029B1BF06B7A002C508C /* logo@3x.png in Resources */,
 				9F12021A1BF03F4A002C508C /* Assets.xcassets in Resources */,
 				9F1202711BF04FCB002C508C /* 请删除.rtf in Resources */,
 				9F12026E1BF04FCB002C508C /* 请删除.rtf in Resources */,
 				9F1202741BF04FCB002C508C /* 请删除.rtf in Resources */,
 				9F1202701BF04FCB002C508C /* 请删除.rtf in Resources */,
-				9F1202731BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F1202961BF06B7A002C508C /* logo.png in Resources */,
 				9F1202791BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F1202951BF06B7A002C508C /* loginImage@2x.png in Resources */,
 				9F1202151BF03F4A002C508C /* Main.storyboard in Resources */,
 				9F1202771BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F1202981BF06B7A002C508C /* logo@3x.png in Resources */,
+				9F2D91191BF0976B00BB0330 /* RegisterImage@2x.png in Resources */,
 				9F1202761BF04FCB002C508C /* 请删除.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +546,9 @@
 				9F12020C1BF03F4A002C508C /* main.m in Sources */,
 				9F1202871BF0636D002C508C /* LoginView.m in Sources */,
 				9F12026C1BF04FCB002C508C /* AppDelegate.m in Sources */,
+				9F1202A01BF06D1D002C508C /* UIShakeView.m in Sources */,
+				9F2D91131BF0936F00BB0330 /* RegisterView.m in Sources */,
+				9F2D91161BF0937A00BB0330 /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +658,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				GCC_PREFIX_HEADER = CareDPrefixHeader.pch;
 				INFOPLIST_FILE = CareD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -547,6 +672,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				GCC_PREFIX_HEADER = CareDPrefixHeader.pch;
 				INFOPLIST_FILE = CareD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -574,6 +701,7 @@
 				9F1202231BF03F4A002C508C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
