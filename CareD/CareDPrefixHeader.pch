@@ -9,6 +9,16 @@
 #ifndef CareDPrefixHeader_pch
 #define CareDPrefixHeader_pch
 
+#ifndef __OPTIMIZE__
+
+#define NSLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define NSLog(...) {}
+
+#endif
+
 //headers By Lake
 #import "LakeDefines.h"
 //headers By YHY
