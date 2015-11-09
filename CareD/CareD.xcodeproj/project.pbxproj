@@ -12,7 +12,21 @@
 		9F1202181BF03F4A002C508C /* CareD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F1202161BF03F4A002C508C /* CareD.xcdatamodeld */; };
 		9F12021A1BF03F4A002C508C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202191BF03F4A002C508C /* Assets.xcassets */; };
 		9F12021D1BF03F4A002C508C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F12021B1BF03F4A002C508C /* LaunchScreen.storyboard */; };
-		9F1202341BF03F79002C508C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1202271BF03F79002C508C /* AppDelegate.m */; };
+		9F12026C1BF04FCB002C508C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1202461BF04FCB002C508C /* AppDelegate.m */; };
+		9F12026D1BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202491BF04FCB002C508C /* 请删除.rtf */; };
+		9F12026E1BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F12024F1BF04FCB002C508C /* 请删除.rtf */; };
+		9F12026F1BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202511BF04FCB002C508C /* 请删除.rtf */; };
+		9F1202701BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202531BF04FCB002C508C /* 请删除.rtf */; };
+		9F1202711BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202551BF04FCB002C508C /* 请删除.rtf */; };
+		9F1202721BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202571BF04FCB002C508C /* 请删除.rtf */; };
+		9F1202731BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202591BF04FCB002C508C /* 请删除.rtf */; };
+		9F1202741BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F12025D1BF04FCB002C508C /* 请删除.rtf */; };
+		9F1202751BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F12025F1BF04FCB002C508C /* 请删除.rtf */; };
+		9F1202761BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202621BF04FCB002C508C /* 请删除.rtf */; };
+		9F1202771BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202641BF04FCB002C508C /* 请删除.rtf */; };
+		9F1202781BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202671BF04FCB002C508C /* 请删除.rtf */; };
+		9F1202791BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202691BF04FCB002C508C /* 请删除.rtf */; };
+		9F12027A1BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F12026B1BF04FCB002C508C /* 请删除.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,12 +37,26 @@
 		9F1202191BF03F4A002C508C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F12021C1BF03F4A002C508C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F12021E1BF03F4A002C508C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F1202261BF03F79002C508C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		9F1202271BF03F79002C508C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9F1202351BF03FA4002C508C /* CareDPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CareDPrefixHeader.pch; sourceTree = "<group>"; };
-		9F1202371BF03FD1002C508C /* LakeDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LakeDefines.h; sourceTree = "<group>"; };
-		9F1202381BF04879002C508C /* GreenDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GreenDefines.h; sourceTree = "<group>"; };
-		9F1202391BF0488B002C508C /* HYDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYDefines.h; sourceTree = "<group>"; };
+		9F1202451BF04FCB002C508C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9F1202461BF04FCB002C508C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9F1202491BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F12024B1BF04FCB002C508C /* GreenDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GreenDefines.h; sourceTree = "<group>"; };
+		9F12024C1BF04FCB002C508C /* HYDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDefines.h; sourceTree = "<group>"; };
+		9F12024D1BF04FCB002C508C /* LakeDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LakeDefines.h; sourceTree = "<group>"; };
+		9F12024F1BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F1202511BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F1202531BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F1202551BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F1202571BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F1202591BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F12025D1BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F12025F1BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F1202621BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F1202641BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F1202671BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F1202691BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F12026B1BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +90,7 @@
 		9F1202091BF03F4A002C508C /* CareD */ = {
 			isa = PBXGroup;
 			children = (
-				9F1202241BF03F79002C508C /* Classes */,
+				9F1202431BF04FCB002C508C /* Classes */,
 				9F1202131BF03F4A002C508C /* Main.storyboard */,
 				9F1202191BF03F4A002C508C /* Assets.xcassets */,
 				9F12021B1BF03F4A002C508C /* LaunchScreen.storyboard */,
@@ -81,184 +109,198 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9F1202241BF03F79002C508C /* Classes */ = {
+		9F1202431BF04FCB002C508C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				9F1202251BF03F79002C508C /* AppDelegate */,
-				9F1202281BF03F79002C508C /* General */,
-				9F12022C1BF03F79002C508C /* Helpers */,
-				9F12022D1BF03F79002C508C /* Macro */,
-				9F12022E1BF03F79002C508C /* Models */,
-				9F12022F1BF03F79002C508C /* Resources */,
-				9F1202301BF03F79002C508C /* Scenes */,
-				9F1202331BF03F79002C508C /* Vendors */,
+				9F1202441BF04FCB002C508C /* AppDelegate */,
+				9F1202471BF04FCB002C508C /* General */,
+				9F1202521BF04FCB002C508C /* Helpers */,
+				9F1202541BF04FCB002C508C /* Macro */,
+				9F1202561BF04FCB002C508C /* Models */,
+				9F1202581BF04FCB002C508C /* Resources */,
+				9F12025A1BF04FCB002C508C /* Scenes */,
+				9F12026A1BF04FCB002C508C /* Vendors */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		9F1202251BF03F79002C508C /* AppDelegate */ = {
+		9F1202441BF04FCB002C508C /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				9F1202261BF03F79002C508C /* AppDelegate.h */,
-				9F1202271BF03F79002C508C /* AppDelegate.m */,
+				9F1202451BF04FCB002C508C /* AppDelegate.h */,
+				9F1202461BF04FCB002C508C /* AppDelegate.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		9F1202281BF03F79002C508C /* General */ = {
+		9F1202471BF04FCB002C508C /* General */ = {
 			isa = PBXGroup;
 			children = (
-				9F1202361BF03FC0002C508C /* Defines */,
-				9F1202291BF03F79002C508C /* Categories */,
-				9F12022A1BF03F79002C508C /* ViewControllers */,
-				9F12022B1BF03F79002C508C /* Views */,
+				9F1202481BF04FCB002C508C /* Categories */,
+				9F12024A1BF04FCB002C508C /* Defines */,
+				9F12024E1BF04FCB002C508C /* ViewControllers */,
+				9F1202501BF04FCB002C508C /* Views */,
 			);
 			path = General;
 			sourceTree = "<group>";
 		};
-		9F1202291BF03F79002C508C /* Categories */ = {
+		9F1202481BF04FCB002C508C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				9F1202491BF04FCB002C508C /* 请删除.rtf */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		9F12022A1BF03F79002C508C /* ViewControllers */ = {
+		9F12024A1BF04FCB002C508C /* Defines */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		9F12022B1BF03F79002C508C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		9F12022C1BF03F79002C508C /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		9F12022D1BF03F79002C508C /* Macro */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Macro;
-			sourceTree = "<group>";
-		};
-		9F12022E1BF03F79002C508C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		9F12022F1BF03F79002C508C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		9F1202301BF03F79002C508C /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				9F12023A1BF04AC7002C508C /* Green */,
-				9F12023D1BF04AC7002C508C /* Lake */,
-				9F1202401BF04AC7002C508C /* YHY */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		9F1202331BF03F79002C508C /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendors;
-			sourceTree = "<group>";
-		};
-		9F1202361BF03FC0002C508C /* Defines */ = {
-			isa = PBXGroup;
-			children = (
-				9F1202371BF03FD1002C508C /* LakeDefines.h */,
-				9F1202381BF04879002C508C /* GreenDefines.h */,
-				9F1202391BF0488B002C508C /* HYDefines.h */,
+				9F12024B1BF04FCB002C508C /* GreenDefines.h */,
+				9F12024C1BF04FCB002C508C /* HYDefines.h */,
+				9F12024D1BF04FCB002C508C /* LakeDefines.h */,
 			);
 			path = Defines;
 			sourceTree = "<group>";
 		};
-		9F12023A1BF04AC7002C508C /* Green */ = {
+		9F12024E1BF04FCB002C508C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9F12023B1BF04AC7002C508C /* View */,
-				9F12023C1BF04AC7002C508C /* ViewController */,
+				9F12024F1BF04FCB002C508C /* 请删除.rtf */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9F1202501BF04FCB002C508C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F1202511BF04FCB002C508C /* 请删除.rtf */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9F1202521BF04FCB002C508C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9F1202531BF04FCB002C508C /* 请删除.rtf */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		9F1202541BF04FCB002C508C /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				9F1202551BF04FCB002C508C /* 请删除.rtf */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		9F1202561BF04FCB002C508C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9F1202571BF04FCB002C508C /* 请删除.rtf */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9F1202581BF04FCB002C508C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F1202591BF04FCB002C508C /* 请删除.rtf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9F12025A1BF04FCB002C508C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				9F12025B1BF04FCB002C508C /* Green */,
+				9F1202601BF04FCB002C508C /* Lake */,
+				9F1202651BF04FCB002C508C /* YHY */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		9F12025B1BF04FCB002C508C /* Green */ = {
+			isa = PBXGroup;
+			children = (
+				9F12025C1BF04FCB002C508C /* View */,
+				9F12025E1BF04FCB002C508C /* ViewController */,
 			);
 			path = Green;
 			sourceTree = "<group>";
 		};
-		9F12023B1BF04AC7002C508C /* View */ = {
+		9F12025C1BF04FCB002C508C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9F12025D1BF04FCB002C508C /* 请删除.rtf */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		9F12023C1BF04AC7002C508C /* ViewController */ = {
+		9F12025E1BF04FCB002C508C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9F12025F1BF04FCB002C508C /* 请删除.rtf */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		9F12023D1BF04AC7002C508C /* Lake */ = {
+		9F1202601BF04FCB002C508C /* Lake */ = {
 			isa = PBXGroup;
 			children = (
-				9F12023E1BF04AC7002C508C /* View */,
-				9F12023F1BF04AC7002C508C /* ViewController */,
+				9F1202611BF04FCB002C508C /* View */,
+				9F1202631BF04FCB002C508C /* ViewController */,
 			);
 			path = Lake;
 			sourceTree = "<group>";
 		};
-		9F12023E1BF04AC7002C508C /* View */ = {
+		9F1202611BF04FCB002C508C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9F1202621BF04FCB002C508C /* 请删除.rtf */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		9F12023F1BF04AC7002C508C /* ViewController */ = {
+		9F1202631BF04FCB002C508C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9F1202641BF04FCB002C508C /* 请删除.rtf */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		9F1202401BF04AC7002C508C /* YHY */ = {
+		9F1202651BF04FCB002C508C /* YHY */ = {
 			isa = PBXGroup;
 			children = (
-				9F1202411BF04AC7002C508C /* View */,
-				9F1202421BF04AC7002C508C /* ViewController */,
+				9F1202661BF04FCB002C508C /* View */,
+				9F1202681BF04FCB002C508C /* ViewController */,
 			);
 			path = YHY;
 			sourceTree = "<group>";
 		};
-		9F1202411BF04AC7002C508C /* View */ = {
+		9F1202661BF04FCB002C508C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9F1202671BF04FCB002C508C /* 请删除.rtf */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		9F1202421BF04AC7002C508C /* ViewController */ = {
+		9F1202681BF04FCB002C508C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9F1202691BF04FCB002C508C /* 请删除.rtf */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9F12026A1BF04FCB002C508C /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				9F12026B1BF04FCB002C508C /* 请删除.rtf */,
+			);
+			path = Vendors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,9 +360,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1202751BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F1202721BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F12026F1BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F1202781BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F12026D1BF04FCB002C508C /* 请删除.rtf in Resources */,
 				9F12021D1BF03F4A002C508C /* LaunchScreen.storyboard in Resources */,
+				9F12027A1BF04FCB002C508C /* 请删除.rtf in Resources */,
 				9F12021A1BF03F4A002C508C /* Assets.xcassets in Resources */,
+				9F1202711BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F12026E1BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F1202741BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F1202701BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F1202731BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F1202791BF04FCB002C508C /* 请删除.rtf in Resources */,
 				9F1202151BF03F4A002C508C /* Main.storyboard in Resources */,
+				9F1202771BF04FCB002C508C /* 请删除.rtf in Resources */,
+				9F1202761BF04FCB002C508C /* 请删除.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,9 +387,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F1202341BF03F79002C508C /* AppDelegate.m in Sources */,
 				9F1202181BF03F4A002C508C /* CareD.xcdatamodeld in Sources */,
 				9F12020C1BF03F4A002C508C /* main.m in Sources */,
+				9F12026C1BF04FCB002C508C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
