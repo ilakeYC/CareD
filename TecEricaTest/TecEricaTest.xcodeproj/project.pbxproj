@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9F1201E61BF02FFD002C508C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1201E51BF02FFD002C508C /* main.m */; };
 		9F1201E91BF02FFD002C508C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1201E81BF02FFD002C508C /* AppDelegate.m */; };
-		9F1201EC1BF02FFD002C508C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1201EB1BF02FFD002C508C /* ViewController.m */; };
 		9F1201EF1BF02FFD002C508C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1201ED1BF02FFD002C508C /* Main.storyboard */; };
 		9F1201F21BF02FFD002C508C /* TecEricaTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F1201F01BF02FFD002C508C /* TecEricaTest.xcdatamodeld */; };
 		9F1201F41BF02FFD002C508C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F1201F31BF02FFD002C508C /* Assets.xcassets */; };
@@ -21,8 +20,6 @@
 		9F1201E51BF02FFD002C508C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9F1201E71BF02FFD002C508C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9F1201E81BF02FFD002C508C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9F1201EA1BF02FFD002C508C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9F1201EB1BF02FFD002C508C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9F1201EE1BF02FFD002C508C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9F1201F11BF02FFD002C508C /* TecEricaTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TecEricaTest.xcdatamodel; sourceTree = "<group>"; };
 		9F1201F31BF02FFD002C508C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,8 +59,6 @@
 			children = (
 				9F1201E71BF02FFD002C508C /* AppDelegate.h */,
 				9F1201E81BF02FFD002C508C /* AppDelegate.m */,
-				9F1201EA1BF02FFD002C508C /* ViewController.h */,
-				9F1201EB1BF02FFD002C508C /* ViewController.m */,
 				9F1201ED1BF02FFD002C508C /* Main.storyboard */,
 				9F1201F31BF02FFD002C508C /* Assets.xcassets */,
 				9F1201F51BF02FFD002C508C /* LaunchScreen.storyboard */,
@@ -152,7 +147,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F1201EC1BF02FFD002C508C /* ViewController.m in Sources */,
 				9F1201F21BF02FFD002C508C /* TecEricaTest.xcdatamodeld in Sources */,
 				9F1201E91BF02FFD002C508C /* AppDelegate.m in Sources */,
 				9F1201E61BF02FFD002C508C /* main.m in Sources */,
@@ -302,6 +296,7 @@
 				9F1201FD1BF02FFD002C508C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
