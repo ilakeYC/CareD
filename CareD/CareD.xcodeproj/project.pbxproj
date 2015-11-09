@@ -27,6 +27,8 @@
 		9F1202781BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202671BF04FCB002C508C /* 请删除.rtf */; };
 		9F1202791BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202691BF04FCB002C508C /* 请删除.rtf */; };
 		9F12027A1BF04FCB002C508C /* 请删除.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9F12026B1BF04FCB002C508C /* 请删除.rtf */; };
+		9F1202841BF06360002C508C /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1202831BF06360002C508C /* LoginViewController.m */; };
+		9F1202871BF0636D002C508C /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1202861BF0636D002C508C /* LoginView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,10 @@
 		9F1202671BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
 		9F1202691BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
 		9F12026B1BF04FCB002C508C /* 请删除.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "请删除.rtf"; sourceTree = "<group>"; };
+		9F1202821BF06360002C508C /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		9F1202831BF06360002C508C /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		9F1202851BF0636D002C508C /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		9F1202861BF0636D002C508C /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +254,7 @@
 		9F1202601BF04FCB002C508C /* Lake */ = {
 			isa = PBXGroup;
 			children = (
+				9F12027B1BF06348002C508C /* Login */,
 				9F1202611BF04FCB002C508C /* View */,
 				9F1202631BF04FCB002C508C /* ViewController */,
 			);
@@ -301,6 +308,33 @@
 				9F12026B1BF04FCB002C508C /* 请删除.rtf */,
 			);
 			path = Vendors;
+			sourceTree = "<group>";
+		};
+		9F12027B1BF06348002C508C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9F12027C1BF06348002C508C /* View */,
+				9F12027E1BF06348002C508C /* ViewController */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9F12027C1BF06348002C508C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F1202851BF0636D002C508C /* LoginView.h */,
+				9F1202861BF0636D002C508C /* LoginView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F12027E1BF06348002C508C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9F1202821BF06360002C508C /* LoginViewController.h */,
+				9F1202831BF06360002C508C /* LoginViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,8 +421,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F1202841BF06360002C508C /* LoginViewController.m in Sources */,
 				9F1202181BF03F4A002C508C /* CareD.xcdatamodeld in Sources */,
 				9F12020C1BF03F4A002C508C /* main.m in Sources */,
+				9F1202871BF0636D002C508C /* LoginView.m in Sources */,
 				9F12026C1BF04FCB002C508C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

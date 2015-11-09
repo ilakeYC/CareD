@@ -9,6 +9,9 @@
 #ifndef LakeDefines_h
 #define LakeDefines_h
 
+#define CareD_Lake_MainScreenBounds [UIScreen mainScreen].bounds
 
+//头文件
+#import "LoginViewController.h"
 
 #endif /* LakeDefines_h */
