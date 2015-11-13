@@ -17,12 +17,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [self settingLeanCloudAppIDAndAppKey];
+    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [LoginViewController new];
     _window.backgroundColor = [UIColor whiteColor];
     [_window makeKeyAndVisible];
     
+    
+    [UINavigationBar appearance].barTintColor = CareD_Lake_COLOR_AbsintheGreen;
     return YES;
+}
+
+- (void)settingLeanCloudAppIDAndAppKey {
+    //设置appkey 和 appid
+    NSString *appid = CARED_LEANCLOUD_APPID;
+    NSString *appKey = CARED_LEANCLOUD_APPKEY;
+    
+    [AVOSCloud setApplicationId:appid clientKey:appKey];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

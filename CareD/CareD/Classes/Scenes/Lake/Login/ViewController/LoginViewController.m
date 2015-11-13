@@ -9,8 +9,9 @@
 #import "LoginViewController.h"
 #import "LoginView.h"
 
-@interface LoginViewController ()<UITextFieldDelegate>
+@interface LoginViewController ()<UITextFieldDelegate,YCUserManagerDelegate>
 @property (nonatomic,strong) LoginView *loginView;
+@property (nonatomic,strong) YCUserManager *userManager;
 
 @end
 
@@ -26,17 +27,37 @@
     self.loginView.nameTextField.delegate = self;
     self.loginView.passwordTextField.delegate = self;
     
+    self.userManager = [YCUserManager sharedUserManager];
+    [self.userManager addDelegate:self];
+    
+    
+    
     [self.loginView.registerButton addTarget:self action:@selector(registerButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.loginView.loginButton addTarget:self action:@selector(loginButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+#warning remember to open this for login use current user
+//    [self.userManager logInWithCurrentUserAndReturnToken];
+    [super viewDidAppear:animated];
+}
+
 #pragma mark - 登陆按钮点击事件
 - (void)loginButtonAction:(UIButton *)sender {
-    [self.loginView shake];
+    [self.loginView endEditing:YES];
+    [self.loginView checking];
+    [self performSelector:@selector(loginButtonActionAfter) withObject:self afterDelay:2];
+
+}
+- (void)loginButtonActionAfter {
+    [self.userManager logInReturnTokenWithUserName:self.loginView.nameTextField.text password:self.loginView.passwordTextField.text];
 }
 #pragma mark - 注册按钮点击事件
 - (void)registerButtonAction:(UIButton *)sender {
+    [self.loginView endEditing:YES];
     RegisterViewController *registerVC = [RegisterViewController new];
-    registerVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    registerVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:registerVC animated:YES completion:^{
         
     }];
@@ -51,5 +72,33 @@
         [self.loginView endEditing:YES];
     }
     return YES;
+}
+
+#pragma mark - UserManagerDelegates
+//用户名密码登陆成功返回token
+- (void)userManagerLogInLoginWithUserNameAndPasswordSuccessed:(AVUser *)user token:(NSString *)token {
+    NSLog(@"登陆成功.%@",token);
+    [self.loginView unChecking];
+}
+//登陆失败
+- (void)userManagerLogInLoginWithUserNameAndPasswordFaliure {
+    NSLog(@"登陆失败");
+    [self.loginView shake];
+    [self.loginView unChecking];
+    [self.loginView checkedError];
+}
+//将要使用当前用户登陆
+- (void)userManagerLogInWillLoginWithCurrentUser {
+    [self.loginView.loginButton setIsLoading:YES];
+    [self.loginView checking];
+}
+//当前用户登陆成功
+- (void)userManagerLogInLoginWithCurrentUserSccessed:(AVUser *)currentUser token:(NSString *)token {
+    [self.loginView unChecking];
+    NSLog(@"%@",token);
+    NSLog(@"用户登陆成功");
+}
+- (void)userManagerLogInLoginWithCurrentUserFaliure {
+    [self.loginView unChecking];
 }
 @end

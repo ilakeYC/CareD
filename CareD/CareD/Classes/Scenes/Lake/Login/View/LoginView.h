@@ -17,11 +17,16 @@
 @property (nonatomic,strong) UITextField *nameTextField;
 @property (nonatomic,strong) UITextField *passwordTextField;
 
-@property (nonatomic,strong) UIButton *loginButton;
+@property (nonatomic,strong) DeformationButton *loginButton;
 @property (nonatomic,strong) UIButton *registerButton;
 @property (nonatomic,strong) UIButton *findPasswordButton;
 
+@property (nonatomic,strong) UILabel *worningLabel;
+
 - (void)shake;
+- (void)checking;
+- (void)unChecking;
+- (void)checkedError;
 
 ///视图上移
 - (void)viewUP;

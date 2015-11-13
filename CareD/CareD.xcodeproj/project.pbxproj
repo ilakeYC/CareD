@@ -36,8 +36,15 @@
 		9F12029A1BF06B7A002C508C /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202921BF06B7A002C508C /* logo@2x.png */; };
 		9F12029B1BF06B7A002C508C /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1202931BF06B7A002C508C /* logo@3x.png */; };
 		9F1202A01BF06D1D002C508C /* UIShakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F12029F1BF06D1D002C508C /* UIShakeView.m */; };
-		9F2D91131BF0936F00BB0330 /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D91121BF0936F00BB0330 /* RegisterView.m */; };
-		9F2D91161BF0937A00BB0330 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2D91151BF0937A00BB0330 /* RegisterViewController.m */; };
+		9F29FF4C1BF463D000232E8E /* YCUserFriendsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F29FF461BF463D000232E8E /* YCUserFriendsManager.m */; };
+		9F29FF4D1BF463D000232E8E /* YCUserImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F29FF481BF463D000232E8E /* YCUserImageManager.m */; };
+		9F29FF4E1BF463D000232E8E /* YCUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F29FF4A1BF463D000232E8E /* YCUserManager.m */; };
+		9F29FF561BF46DA800232E8E /* DeformationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F29FF521BF46DA800232E8E /* DeformationButton.m */; };
+		9F29FF571BF46DA800232E8E /* MMMaterialDesignSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F29FF551BF46DA800232E8E /* MMMaterialDesignSpinner.m */; };
+		9F29FF5B1BF4823900232E8E /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F29FF591BF4823900232E8E /* RegisterViewController.m */; };
+		9F29FF5C1BF4823900232E8E /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F29FF5A1BF4823900232E8E /* RegisterViewController.xib */; };
+		9F29FF671BF4C29C00232E8E /* RegisterSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F29FF651BF4C29C00232E8E /* RegisterSettingsViewController.m */; };
+		9F29FF681BF4C29C00232E8E /* RegisterSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F29FF661BF4C29C00232E8E /* RegisterSettingsViewController.xib */; };
 		9F2D91191BF0976B00BB0330 /* RegisterImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F2D91181BF0976B00BB0330 /* RegisterImage@2x.png */; };
 		9FC1BAD61BF177CC00FD46D0 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC1BABC1BF177CC00FD46D0 /* Icon-100.png */; };
 		9FC1BAD71BF177CC00FD46D0 /* Icon-108.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC1BABD1BF177CC00FD46D0 /* Icon-108.png */; };
@@ -108,10 +115,24 @@
 		9F1202931BF06B7A002C508C /* logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@3x.png"; sourceTree = "<group>"; };
 		9F12029E1BF06D1D002C508C /* UIShakeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIShakeView.h; sourceTree = "<group>"; };
 		9F12029F1BF06D1D002C508C /* UIShakeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIShakeView.m; sourceTree = "<group>"; };
-		9F2D91111BF0936F00BB0330 /* RegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
-		9F2D91121BF0936F00BB0330 /* RegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
-		9F2D91141BF0937A00BB0330 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
-		9F2D91151BF0937A00BB0330 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		9F29FF441BF463D000232E8E /* YCUserDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCUserDefines.h; sourceTree = "<group>"; };
+		9F29FF451BF463D000232E8E /* YCUserFriendsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCUserFriendsManager.h; sourceTree = "<group>"; };
+		9F29FF461BF463D000232E8E /* YCUserFriendsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCUserFriendsManager.m; sourceTree = "<group>"; };
+		9F29FF471BF463D000232E8E /* YCUserImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCUserImageManager.h; sourceTree = "<group>"; };
+		9F29FF481BF463D000232E8E /* YCUserImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCUserImageManager.m; sourceTree = "<group>"; };
+		9F29FF491BF463D000232E8E /* YCUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCUserManager.h; sourceTree = "<group>"; };
+		9F29FF4A1BF463D000232E8E /* YCUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCUserManager.m; sourceTree = "<group>"; };
+		9F29FF4B1BF463D000232E8E /* YCUsers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCUsers.h; sourceTree = "<group>"; };
+		9F29FF511BF46DA800232E8E /* DeformationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeformationButton.h; sourceTree = "<group>"; };
+		9F29FF521BF46DA800232E8E /* DeformationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeformationButton.m; sourceTree = "<group>"; };
+		9F29FF541BF46DA800232E8E /* MMMaterialDesignSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMaterialDesignSpinner.h; sourceTree = "<group>"; };
+		9F29FF551BF46DA800232E8E /* MMMaterialDesignSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMaterialDesignSpinner.m; sourceTree = "<group>"; };
+		9F29FF581BF4823900232E8E /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		9F29FF591BF4823900232E8E /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		9F29FF5A1BF4823900232E8E /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		9F29FF641BF4C29C00232E8E /* RegisterSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterSettingsViewController.h; sourceTree = "<group>"; };
+		9F29FF651BF4C29C00232E8E /* RegisterSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterSettingsViewController.m; sourceTree = "<group>"; };
+		9F29FF661BF4C29C00232E8E /* RegisterSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterSettingsViewController.xib; sourceTree = "<group>"; };
 		9F2D91181BF0976B00BB0330 /* RegisterImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "RegisterImage@2x.png"; sourceTree = "<group>"; };
 		9FC1BABC1BF177CC00FD46D0 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
 		9FC1BABD1BF177CC00FD46D0 /* Icon-108.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-108.png"; sourceTree = "<group>"; };
@@ -342,6 +363,7 @@
 		9F1202601BF04FCB002C508C /* Lake */ = {
 			isa = PBXGroup;
 			children = (
+				9F29FF5D1BF4C21D00232E8E /* RegisterSettings */,
 				9F12027B1BF06348002C508C /* Login */,
 				9F2D910A1BF0935700BB0330 /* Register */,
 				9F1202611BF04FCB002C508C /* View */,
@@ -394,6 +416,8 @@
 		9F12026A1BF04FCB002C508C /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				9F29FF4F1BF46DA800232E8E /* DeformationButton */,
+				9F29FF431BF463D000232E8E /* YCChatManagers */,
 				9F12029D1BF06D1D002C508C /* UIShakeView */,
 			);
 			path = Vendors;
@@ -483,6 +507,74 @@
 			path = UIShakeView;
 			sourceTree = "<group>";
 		};
+		9F29FF431BF463D000232E8E /* YCChatManagers */ = {
+			isa = PBXGroup;
+			children = (
+				9F29FF441BF463D000232E8E /* YCUserDefines.h */,
+				9F29FF451BF463D000232E8E /* YCUserFriendsManager.h */,
+				9F29FF461BF463D000232E8E /* YCUserFriendsManager.m */,
+				9F29FF471BF463D000232E8E /* YCUserImageManager.h */,
+				9F29FF481BF463D000232E8E /* YCUserImageManager.m */,
+				9F29FF491BF463D000232E8E /* YCUserManager.h */,
+				9F29FF4A1BF463D000232E8E /* YCUserManager.m */,
+				9F29FF4B1BF463D000232E8E /* YCUsers.h */,
+			);
+			path = YCChatManagers;
+			sourceTree = "<group>";
+		};
+		9F29FF4F1BF46DA800232E8E /* DeformationButton */ = {
+			isa = PBXGroup;
+			children = (
+				9F29FF501BF46DA800232E8E /* Source */,
+			);
+			path = DeformationButton;
+			sourceTree = "<group>";
+		};
+		9F29FF501BF46DA800232E8E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				9F29FF511BF46DA800232E8E /* DeformationButton.h */,
+				9F29FF521BF46DA800232E8E /* DeformationButton.m */,
+				9F29FF531BF46DA800232E8E /* MMMaterialDesignSpinner-master */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		9F29FF531BF46DA800232E8E /* MMMaterialDesignSpinner-master */ = {
+			isa = PBXGroup;
+			children = (
+				9F29FF541BF46DA800232E8E /* MMMaterialDesignSpinner.h */,
+				9F29FF551BF46DA800232E8E /* MMMaterialDesignSpinner.m */,
+			);
+			path = "MMMaterialDesignSpinner-master";
+			sourceTree = "<group>";
+		};
+		9F29FF5D1BF4C21D00232E8E /* RegisterSettings */ = {
+			isa = PBXGroup;
+			children = (
+				9F29FF5E1BF4C21D00232E8E /* View */,
+				9F29FF601BF4C21D00232E8E /* ViewController */,
+			);
+			path = RegisterSettings;
+			sourceTree = "<group>";
+		};
+		9F29FF5E1BF4C21D00232E8E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F29FF601BF4C21D00232E8E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9F29FF641BF4C29C00232E8E /* RegisterSettingsViewController.h */,
+				9F29FF651BF4C29C00232E8E /* RegisterSettingsViewController.m */,
+				9F29FF661BF4C29C00232E8E /* RegisterSettingsViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		9F2D910A1BF0935700BB0330 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -495,8 +587,6 @@
 		9F2D910B1BF0935700BB0330 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9F2D91111BF0936F00BB0330 /* RegisterView.h */,
-				9F2D91121BF0936F00BB0330 /* RegisterView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -504,8 +594,9 @@
 		9F2D910D1BF0935700BB0330 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9F2D91141BF0937A00BB0330 /* RegisterViewController.h */,
-				9F2D91151BF0937A00BB0330 /* RegisterViewController.m */,
+				9F29FF581BF4823900232E8E /* RegisterViewController.h */,
+				9F29FF591BF4823900232E8E /* RegisterViewController.m */,
+				9F29FF5A1BF4823900232E8E /* RegisterViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -621,6 +712,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FC1BAE61BF177CC00FD46D0 /* Icon-57.png in Resources */,
+				9F29FF5C1BF4823900232E8E /* RegisterViewController.xib in Resources */,
 				9FC1BAEF1BF177CC00FD46D0 /* icon.png in Resources */,
 				9FC1BAE31BF177CC00FD46D0 /* Icon-40.png in Resources */,
 				9F12029A1BF06B7A002C508C /* logo@2x.png in Resources */,
@@ -645,6 +737,7 @@
 				9FC1BAE91BF177CC00FD46D0 /* Icon-64.png in Resources */,
 				9FC1BADF1BF177CC00FD46D0 /* Icon-180.png in Resources */,
 				9FC1BADC1BF177CC00FD46D0 /* Icon-152.png in Resources */,
+				9F29FF681BF4C29C00232E8E /* RegisterSettingsViewController.xib in Resources */,
 				9FC1BADD1BF177CC00FD46D0 /* Icon-155.png in Resources */,
 				9F1202741BF04FCB002C508C /* 请删除.rtf in Resources */,
 				9F1202701BF04FCB002C508C /* 请删除.rtf in Resources */,
@@ -714,12 +807,17 @@
 			files = (
 				9F1202841BF06360002C508C /* LoginViewController.m in Sources */,
 				9F1202181BF03F4A002C508C /* CareD.xcdatamodeld in Sources */,
+				9F29FF4C1BF463D000232E8E /* YCUserFriendsManager.m in Sources */,
 				9F12020C1BF03F4A002C508C /* main.m in Sources */,
 				9F1202871BF0636D002C508C /* LoginView.m in Sources */,
+				9F29FF571BF46DA800232E8E /* MMMaterialDesignSpinner.m in Sources */,
+				9F29FF4E1BF463D000232E8E /* YCUserManager.m in Sources */,
+				9F29FF5B1BF4823900232E8E /* RegisterViewController.m in Sources */,
+				9F29FF561BF46DA800232E8E /* DeformationButton.m in Sources */,
 				9F12026C1BF04FCB002C508C /* AppDelegate.m in Sources */,
+				9F29FF671BF4C29C00232E8E /* RegisterSettingsViewController.m in Sources */,
 				9F1202A01BF06D1D002C508C /* UIShakeView.m in Sources */,
-				9F2D91131BF0936F00BB0330 /* RegisterView.m in Sources */,
-				9F2D91161BF0937A00BB0330 /* RegisterViewController.m in Sources */,
+				9F29FF4D1BF463D000232E8E /* YCUserImageManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

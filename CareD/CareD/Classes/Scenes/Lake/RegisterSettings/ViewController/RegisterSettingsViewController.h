@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.h
+//  RegisterSettingsViewController.h
 //  CareD
 //
 //  Created by LakesMac on 15/11/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RegisterViewController : UIViewController
+@interface RegisterSettingsViewController : UIViewController
 
 @end
