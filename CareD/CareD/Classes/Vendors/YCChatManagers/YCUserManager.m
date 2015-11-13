@@ -232,6 +232,7 @@
     }
     
     [AVUser logInWithUsernameInBackground:userName password:password block:^(AVUser *user, NSError *error) {
+        NSLog(@"---------%@",error);
         if (user) {
             //成功
             

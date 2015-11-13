@@ -13,6 +13,7 @@
 @interface YCUserImageManager ()
 
 @property (nonatomic,strong) NSMutableDictionary *friendListImageListDictionary;
+@property (nonatomic,strong) NSMutableDictionary *friendListImageUrlListDictionary;
 
 @property (nonatomic,assign) NSInteger numberOfFriends;
 @end
@@ -49,7 +50,7 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
         }
         
         AVObject *userImage = [objects firstObject];
-//        AVFile *oldImageFile = userImage[@"image"];
+        AVFile *oldImageFile = userImage[@"image"];
         
         NSData *imageData = UIImagePNGRepresentation(image);
         AVFile *newImageFile = [AVFile fileWithName:userName data:imageData];
@@ -62,8 +63,10 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
                 [userImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                    
                     if (succeeded) {
+                        self.currentUserImage = image;
 //                        NSLog(@"%@",oldImageFile);
-//                        [oldImageFile deleteInBackground];
+#warning - I test to delete ole image to save the spacing of server,if this func is wrong,you coule remove this line down there
+                        [oldImageFile deleteInBackground];
                         if (self.delegate && [self.delegate respondsToSelector:@selector(imageUpLoadComplete)]) {
                             [self.delegate imageUpLoadComplete];
                         }
@@ -101,10 +104,19 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
         
         AVFile *imageFile = currentImageObject[@"image"];
         
-        [imageFile getThumbnail:YES width:100 height:100 withBlock:^(UIImage *image, NSError *error) {
+        self.currentUserImageUrl = imageFile.url;
+        [imageFile getThumbnail:YES width:1024 height:1024 withBlock:^(UIImage *image, NSError *error) {
             self.currentUserImage = image;
         }];
     }];
+}
+
+- (void)setCurrentUserImageUrl:(NSString *)currentUserImageUrl {
+    _currentUserImageUrl = currentUserImageUrl;
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(userImageManagerCurrentUserImageURLDownComplete:)]) {
+        [self.delegate userImageManagerCurrentUserImageURLDownComplete:currentUserImageUrl];
+    }
 }
 
 - (NSArray *)getCurrentUserAllFriends {
@@ -138,6 +150,8 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
             
             AVFile *imageFile = currentImageObject[@"image"];
             
+            [self.friendListImageUrlListDictionary setObject:imageFile.url forKey:userNickName];
+            
             [imageFile getThumbnail:YES width:100 height:100 withBlock:^(UIImage *image, NSError *error) {
                 
                 [self.friendListImageListDictionary setObject:image forKey:userNickName];
@@ -147,6 +161,15 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    
+    if (self.friendListImageUrlListDictionary.count == self.numberOfFriends) {
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(friendListImageListURLDownLoadComplete:)]) {
+            [self.delegate friendListImageListURLDownLoadComplete:self.friendListImageUrlListDictionary];
+        }
+        
+    }
+    
     
     if (self.friendListImageListDictionary.count == self.numberOfFriends) {
      
@@ -163,6 +186,12 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
         _friendListImageListDictionary = [NSMutableDictionary dictionary];
     }
     return _friendListImageListDictionary;
+}
+- (NSMutableDictionary *)friendListImageUrlListDictionary{
+    if (!_friendListImageUrlListDictionary) {
+        _friendListImageUrlListDictionary = [NSMutableDictionary dictionary];
+    }
+    return _friendListImageUrlListDictionary;
 }
 
 @end

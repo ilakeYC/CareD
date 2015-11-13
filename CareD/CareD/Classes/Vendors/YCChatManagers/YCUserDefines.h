@@ -13,4 +13,8 @@
 #define CARED_LEANCLOUD_APPKEY @"fgVitcefdKFtsuM8NzTIqCsQ"
 #define CARED_GET_RONGCLOUD_TOKEN_URL @"http://101.200.242.10/rctest/test.php?id=%@&user=%@"
 
+#define CARED_LEANCLOUD_USER_userNameForScan @"userNameForScan"
+#define CARED_LEANCLOUD_USER_userNameForChat @"userNameForChat"
+#define CARED_LEANCLOUD_USER_friendList      @"friends"
+
 #endif /* YCUserDefines_h */

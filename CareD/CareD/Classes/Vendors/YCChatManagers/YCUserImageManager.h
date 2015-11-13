@@ -21,12 +21,18 @@
 
 ///好友头像列表下载完成
 - (void)friendListImageListDownLoadComplete;
+///好友头像列表url下载完成(字典键值为好友昵称)
+- (void)friendListImageListURLDownLoadComplete:(NSDictionary *)dictionary;
+
+///用户头像url下载完成
+- (void)userImageManagerCurrentUserImageURLDownComplete:(NSString *)url;
 
 @end
 
 @interface YCUserImageManager : NSObject
 
 @property (nonatomic,strong) UIImage *currentUserImage;
+@property (nonatomic,copy) NSString *currentUserImageUrl;
 
 @property (nonatomic,assign) id<YCUserImageManagerDelegate> delegate;
 

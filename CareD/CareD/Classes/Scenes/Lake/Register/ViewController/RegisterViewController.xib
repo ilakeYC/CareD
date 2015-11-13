@@ -50,7 +50,7 @@
                             <animations/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFt-Ut-hHf">
                             <rect key="frame" x="54" y="36" width="365.5" height="2"/>
@@ -108,7 +108,7 @@
                             <animations/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="next"/>
                         </textField>
                     </subviews>
                     <animations/>
@@ -155,7 +155,7 @@
                             <animations/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="join"/>
                         </textField>
                     </subviews>
                     <animations/>

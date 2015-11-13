@@ -13,6 +13,7 @@
 
 //- 尺寸
 #define CareD_Lake_MainScreenBounds [UIScreen mainScreen].bounds
+#define CareD_Lake_MainScreenBoundsWithoutNavigationBar CGRectMake(0, 0, CareD_Lake_MainScreenBounds.size.width, CareD_Lake_MainScreenBounds.size.height - 64)
 
 //- 颜色
     ///艾绿
@@ -30,6 +31,7 @@
 #import "LoginViewController.h"             //- 登陆_视图控制器
 #import "RegisterViewController.h"          //- 注册_视图控制器
 #import "RegisterSettingsViewController.h"  //- 注册后的初始化设置_视图控制器
+#import "FriendListViewController.h"        //- 好友列表_视图控制器
 
 #import "YCUsers.h"                 //- 用户层
 

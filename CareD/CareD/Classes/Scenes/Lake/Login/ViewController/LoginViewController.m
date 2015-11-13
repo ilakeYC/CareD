@@ -35,12 +35,13 @@
     [self.loginView.registerButton addTarget:self action:@selector(registerButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.loginView.loginButton addTarget:self action:@selector(loginButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-#warning remember to open this for login use current user
-//    [self.userManager logInWithCurrentUserAndReturnToken];
     [super viewDidAppear:animated];
+#warning remember to open this for login use current user
+    [self.userManager logInWithCurrentUserAndReturnToken];
 }
 
 #pragma mark - 登陆按钮点击事件
@@ -79,6 +80,10 @@
 - (void)userManagerLogInLoginWithUserNameAndPasswordSuccessed:(AVUser *)user token:(NSString *)token {
     NSLog(@"登陆成功.%@",token);
     [self.loginView unChecking];
+    
+    [[YCUserImageManager sharedUserImage] getCurrentUserImage];
+    
+    [self presentFriendListViewController];
 }
 //登陆失败
 - (void)userManagerLogInLoginWithUserNameAndPasswordFaliure {
@@ -97,8 +102,20 @@
     [self.loginView unChecking];
     NSLog(@"%@",token);
     NSLog(@"用户登陆成功");
+    [self presentFriendListViewController];
 }
 - (void)userManagerLogInLoginWithCurrentUserFaliure {
     [self.loginView unChecking];
+}
+
+- (void)presentFriendListViewController {
+    FriendListViewController *friendListVC = [FriendListViewController new];
+    UINavigationController *friendListNC = [[UINavigationController alloc] initWithRootViewController:friendListVC];
+    
+    friendListNC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    [self presentViewController:friendListNC animated:YES completion:^{
+        
+    }];
 }
 @end

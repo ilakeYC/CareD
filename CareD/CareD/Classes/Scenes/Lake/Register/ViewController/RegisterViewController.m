@@ -183,6 +183,21 @@
     }
     return YES;
 }
+
+#pragma mark - textField Delegate 
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.userNameTextField) {
+        [self.passwordTextField becomeFirstResponder];
+    } else if (textField == self.passwordTextField) {
+        [self.emainTextField becomeFirstResponder];
+    } else if (textField == self.emainTextField) {
+        [self.emainTextField resignFirstResponder];
+    }
+    return YES;
+}
+
+
 #pragma mark - userManager Delegates
 //将要注册
 - (void)userManagerRegisterWillRegister {

@@ -9,9 +9,10 @@
 #ifndef YCUsers_h
 #define YCUsers_h
 
-#import "YCUserManager.h"
-#import "YCUserImageManager.h"
-#import "YCUserFriendsManager.h"
-#import "YCUserDefines.h"
+#import "YCUserManager.h"              //用户管理
+#import "YCUserImageManager.h"         //用户头像管理
+#import "YCUserFriendsManager.h"       //用户好友管理
+#import "YCUserFriendRequestManager.h" //用户好友请求管理
+#import "YCUserDefines.h"              //宏定义类
 
 #endif /* YCUsers_h */
