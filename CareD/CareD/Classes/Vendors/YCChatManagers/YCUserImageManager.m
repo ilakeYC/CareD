@@ -107,6 +107,9 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
         self.currentUserImageUrl = imageFile.url;
         [imageFile getThumbnail:YES width:1024 height:1024 withBlock:^(UIImage *image, NSError *error) {
             self.currentUserImage = image;
+            if (self.delegate && [self.delegate respondsToSelector:@selector(userImageManagerCurrentUserImageDownComplete:)]) {
+                [self.delegate userImageManagerCurrentUserImageDownComplete:image];
+            }
         }];
     }];
 }

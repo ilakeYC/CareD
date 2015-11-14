@@ -38,5 +38,6 @@
 //-第三方或自定义视图
 #import "UIShakeView.h"       //- 抖动视图
 #import "DeformationButton.h" //- 首页按钮
+#import "UIImageView+WebCache.h" //
 
 #endif /* LakeDefines_h */

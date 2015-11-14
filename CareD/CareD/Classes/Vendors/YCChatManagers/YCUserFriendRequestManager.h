@@ -40,6 +40,8 @@ typedef NS_ENUM(NSInteger, YCUserFriendRequest) {
 
 @protocol YCUserFriendRequestManagerDelegate <NSObject>
 
+@optional
+
 ///开始接收好友请求
 - (void)userFriendRequestStartReceivingRequest;
 ///接收到好友请求

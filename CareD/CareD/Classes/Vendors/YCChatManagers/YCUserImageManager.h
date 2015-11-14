@@ -12,6 +12,8 @@
 
 @protocol YCUserImageManagerDelegate <NSObject>
 
+@optional
+
 ///上传进度
 - (void)imageUpLoadingProgress:(NSInteger)percent;
 ///上传成功
@@ -26,6 +28,8 @@
 
 ///用户头像url下载完成
 - (void)userImageManagerCurrentUserImageURLDownComplete:(NSString *)url;
+///用户头像下载完成
+- (void)userImageManagerCurrentUserImageDownComplete:(UIImage *)image;
 
 @end
 

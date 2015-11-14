@@ -35,6 +35,8 @@
 
 @protocol YCUserFriendsManager <NSObject>
 
+@optional
+
 ///按照昵称查找联系人开始
 - (void)userFriendsManagerFriendSearchByNickNameStarted;
 ///按照昵称查找联系人结束
