@@ -100,7 +100,14 @@
 - (void)showFuncList {
     [self.funcListView showButtonList];
 }
-//按钮列表
+//按钮列表代理
+- (void)funcListViewTouchedButtonAtIndex:(NSInteger)index {
+    if (index == 0) {
+        
+    } else if (index == 1) {
+        
+    }
+}
 
 #pragma mark - YCUserImageManager delegate
 - (void)userImageManagerCurrentUserImageDownComplete:(UIImage *)image {
