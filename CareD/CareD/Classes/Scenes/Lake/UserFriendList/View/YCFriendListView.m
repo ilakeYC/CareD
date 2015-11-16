@@ -55,6 +55,7 @@ static NSString *const tableListCellID = @"tableListCell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerNib:[UINib nibWithNibName:@"tableListCell" bundle:nil] forCellReuseIdentifier:tableListCellID];
     
+    
     self.tableView.tableFooterView = ({
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 49)];
         view;

@@ -104,6 +104,7 @@
     NSLog(@"用户登陆成功");
     [self presentFriendListViewController];
 }
+//
 - (void)userManagerLogInLoginWithCurrentUserFaliure {
     [self.loginView unChecking];
 }

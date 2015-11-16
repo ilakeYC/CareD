@@ -25,6 +25,7 @@
     [_window makeKeyAndVisible];
     
     
+    
     [UINavigationBar appearance].barTintColor = CareD_Lake_COLOR_AbsintheGreen;
     [UINavigationBar appearance].translucent = NO;
     return YES;

@@ -24,8 +24,10 @@
 
 ///按照昵称查找联系人
 - (void)searchFriendByNickName:(NSString *)nickName;
+
 ///按照用户名查找联系人
 - (void)searchFriendByUserName:(NSString *)userName;
+
 ///通过用户一级加密用户名搜索联系人
 - (void)searchFriendByUserNameForScan:(NSString *)userNameForScan;
 

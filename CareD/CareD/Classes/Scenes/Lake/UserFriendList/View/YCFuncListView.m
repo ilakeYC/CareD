@@ -151,7 +151,7 @@
     } else if (sender == self.scanButton) {
         [self touchedButtonAtIndex:1];
     }
-    
+    [self hiddenButtonList];
 }
 - (void)touchedButtonAtIndex:(NSInteger)index {
     if (self.delegate && [self.delegate respondsToSelector:@selector(funcListViewTouchedButtonAtIndex:)]) {
