@@ -13,4 +13,6 @@
 - (void)showTableListView;
 - (void)showCircleListView;
 
+@property (nonatomic,strong) NSArray *friendArray;
+
 @end

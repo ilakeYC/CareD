@@ -44,7 +44,7 @@
     self.tipsLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CareD_Lake_MainScreenBounds.size.width, 100)];
     self.tipsLabel.textColor = [UIColor lightGrayColor];
     self.tipsLabel.textAlignment = NSTextAlignmentCenter;
-    self.tipsLabel.text = @"按照昵称查找好友";
+    self.tipsLabel.text = @"按照昵称查找联系人";
     [self addSubview:self.tipsLabel];
     
 }

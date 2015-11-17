@@ -20,7 +20,7 @@
 #import "FriendListView.h"
 #import "YCFuncListView.h"
 
-@interface FriendListViewController ()<YCUserImageManagerDelegate, UserImageViewDelegate,YCFuncListViewDelegate,YCUnreadListViewDelegate>
+@interface FriendListViewController ()<YCUserImageManagerDelegate, UserImageViewDelegate,YCFuncListViewDelegate,YCUnreadListViewDelegate,YCFriendRequestListButtonDelegate,YCUserFriendRequestManagerDelegate,YCFriendRequestListButtonDelegate>
 
 @property (nonatomic,strong) FriendListView *friendListView;
 
@@ -66,15 +66,39 @@
     self.funcListView = [YCFuncListView new];
     self.funcListView.delegate = self;
     self.friendListView.unreadListView.delegate = self;
-    
+    self.friendListView.friendRequestButton.delegate = self;
 
     
+    
+    ///接收好友请求通知
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"收到请求" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        self.friendListView.friendRequestButton.hasRequest = YES;
+    }];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     #pragma mark 在这里添加未读
     self.friendListView.unreadListView.numberOfUnread = 3;
+    
+    if ([[YCUserFriendRequestManager sharedUserFriendRequestManager] requestListDic].count != 0) {
+        self.friendListView.friendRequestButton.hasRequest = YES;
+    } else {
+        self.friendListView.friendRequestButton.hasRequest = NO;
+    }
+    
+    
+#warning ！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+    NSArray *userNameArray = [[YCUserFriendsManager sharedFriendsManager] reloadAllFriends];
+    NSMutableArray *friendArray = [NSMutableArray array];
+    for (NSString *userName in userNameArray) {
+        [[YCUserFriendsManager sharedFriendsManager] searchFriendByUserName:userName result:^(AVUser *user) {
+            [friendArray addObject:user];
+            NSLog(@"%@",user.username);
+            self.friendListView.theFriendListView.friendArray = friendArray;
+        }];
+    }
+//    self.friendListView.theFriendListView.friendArray = [[YCUserFriendsManager sharedFriendsManager] reloadAllFriends];
 }
 
 //- 添加按钮列表(导航栏上三个按钮)
@@ -138,6 +162,7 @@
     }
 }
 
+
 #pragma mark - YCUserImageManager delegate
 - (void)userImageManagerCurrentUserImageDownComplete:(UIImage *)image {
 //    [self.friendListView.userImageView setImage:image];
@@ -158,5 +183,10 @@
     
     
 }
+- (void)friendRequestListButtonTouchUpInside {
+    [self.navigationController pushViewController:[FriendRequestsListViewController new] animated:YES];
+}
+
+
 
 @end

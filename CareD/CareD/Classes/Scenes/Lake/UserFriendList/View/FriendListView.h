@@ -10,6 +10,7 @@
 #import "UserImageView.h"
 #import "YCFriendListView.h"
 #import "YCUnreadListView.h"
+#import "YCFriendRequestListButton.h"
 
 @interface FriendListView : UIView
 
@@ -36,4 +37,6 @@
 @property (nonatomic,strong) YCUnreadListView *unreadListView;
 
 @property (nonatomic,strong) YCFriendListView *theFriendListView;
+
+@property (nonatomic,strong) YCFriendRequestListButton *friendRequestButton;
 @end

@@ -117,7 +117,6 @@
     
     [self presentViewController:friendListNC animated:YES completion:^{
         NSLog(@"登陆后");
-        self.view = nil;
     }];
 }
 - (void)dealloc {

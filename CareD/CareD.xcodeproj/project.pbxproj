@@ -120,6 +120,12 @@
 		9F9494AB1BF9DFDA001E4F80 /* YCSearchUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F9494A91BF9DFDA001E4F80 /* YCSearchUserCell.xib */; };
 		9F9494B51BFA03BE001E4F80 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494B41BFA03BE001E4F80 /* AddFriendViewController.m */; };
 		9F9494B81BFA03C9001E4F80 /* AddFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494B71BFA03C9001E4F80 /* AddFriendView.m */; };
+		9F9494BB1BFACD9C001E4F80 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F9494BA1BFACD9C001E4F80 /* backButton.png */; };
+		9F9494BE1BFACE72001E4F80 /* FriendRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494BD1BFACE72001E4F80 /* FriendRequestViewController.m */; };
+		9F9494C11BFACE7F001E4F80 /* FriendRequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494C01BFACE7F001E4F80 /* FriendRequestView.m */; };
+		9F9494C51BFACF2D001E4F80 /* YCFriendRequestListButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494C41BFACF2D001E4F80 /* YCFriendRequestListButton.m */; };
+		9F9494D51BFB050A001E4F80 /* FriendRequestsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494D41BFB050A001E4F80 /* FriendRequestsListViewController.m */; };
+		9F9494D81BFB0518001E4F80 /* FriendRequestsListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494D71BFB0518001E4F80 /* FriendRequestsListView.m */; };
 		9FC1BAD61BF177CC00FD46D0 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC1BABC1BF177CC00FD46D0 /* Icon-100.png */; };
 		9FC1BAD71BF177CC00FD46D0 /* Icon-108.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC1BABD1BF177CC00FD46D0 /* Icon-108.png */; };
 		9FC1BAD81BF177CC00FD46D0 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC1BABE1BF177CC00FD46D0 /* Icon-114.png */; };
@@ -316,6 +322,17 @@
 		9F9494B41BFA03BE001E4F80 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
 		9F9494B61BFA03C9001E4F80 /* AddFriendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendView.h; sourceTree = "<group>"; };
 		9F9494B71BFA03C9001E4F80 /* AddFriendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendView.m; sourceTree = "<group>"; };
+		9F9494BA1BFACD9C001E4F80 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
+		9F9494BC1BFACE72001E4F80 /* FriendRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestViewController.h; sourceTree = "<group>"; };
+		9F9494BD1BFACE72001E4F80 /* FriendRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestViewController.m; sourceTree = "<group>"; };
+		9F9494BF1BFACE7F001E4F80 /* FriendRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestView.h; sourceTree = "<group>"; };
+		9F9494C01BFACE7F001E4F80 /* FriendRequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestView.m; sourceTree = "<group>"; };
+		9F9494C31BFACF2D001E4F80 /* YCFriendRequestListButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCFriendRequestListButton.h; sourceTree = "<group>"; };
+		9F9494C41BFACF2D001E4F80 /* YCFriendRequestListButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCFriendRequestListButton.m; sourceTree = "<group>"; };
+		9F9494D31BFB050A001E4F80 /* FriendRequestsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestsListViewController.h; sourceTree = "<group>"; };
+		9F9494D41BFB050A001E4F80 /* FriendRequestsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestsListViewController.m; sourceTree = "<group>"; };
+		9F9494D61BFB0518001E4F80 /* FriendRequestsListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendRequestsListView.h; sourceTree = "<group>"; };
+		9F9494D71BFB0518001E4F80 /* FriendRequestsListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendRequestsListView.m; sourceTree = "<group>"; };
 		9FC1BABC1BF177CC00FD46D0 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
 		9FC1BABD1BF177CC00FD46D0 /* Icon-108.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-108.png"; sourceTree = "<group>"; };
 		9FC1BABE1BF177CC00FD46D0 /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-114.png"; sourceTree = "<group>"; };
@@ -548,6 +565,7 @@
 		9F1202601BF04FCB002C508C /* Lake */ = {
 			isa = PBXGroup;
 			children = (
+				9F9494C61BFB04BF001E4F80 /* FriendRequestList */,
 				9F9494AC1BFA0389001E4F80 /* AddFriend */,
 				9F9494991BF9D41E001E4F80 /* SearchUsers */,
 				9F459F2A1BF606B7001D9B7F /* UserFriendList */,
@@ -642,6 +660,7 @@
 		9F1202881BF06B7A002C508C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9F9494B91BFACD9C001E4F80 /* buttons */,
 				9F8C08221BF7693F0018ACC7 /* Weather */,
 				9F8C079D1BF6CE490018ACC7 /* Logo */,
 				9FC1BABB1BF177CC00FD46D0 /* icon */,
@@ -789,6 +808,7 @@
 		9F459F2B1BF606B7001D9B7F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9F9494C21BFACF1D001E4F80 /* FriendRequest */,
 				9F9494911BF9CBF7001E4F80 /* Unread */,
 				9F8C07C11BF70FD00018ACC7 /* Cells */,
 				9F459F341BF606DF001D9B7F /* FriendListView.h */,
@@ -1006,6 +1026,8 @@
 			children = (
 				9F9494B61BFA03C9001E4F80 /* AddFriendView.h */,
 				9F9494B71BFA03C9001E4F80 /* AddFriendView.m */,
+				9F9494BF1BFACE7F001E4F80 /* FriendRequestView.h */,
+				9F9494C01BFACE7F001E4F80 /* FriendRequestView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1015,6 +1037,52 @@
 			children = (
 				9F9494B31BFA03BE001E4F80 /* AddFriendViewController.h */,
 				9F9494B41BFA03BE001E4F80 /* AddFriendViewController.m */,
+				9F9494BC1BFACE72001E4F80 /* FriendRequestViewController.h */,
+				9F9494BD1BFACE72001E4F80 /* FriendRequestViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9F9494B91BFACD9C001E4F80 /* buttons */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494BA1BFACD9C001E4F80 /* backButton.png */,
+			);
+			path = buttons;
+			sourceTree = "<group>";
+		};
+		9F9494C21BFACF1D001E4F80 /* FriendRequest */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494C31BFACF2D001E4F80 /* YCFriendRequestListButton.h */,
+				9F9494C41BFACF2D001E4F80 /* YCFriendRequestListButton.m */,
+			);
+			path = FriendRequest;
+			sourceTree = "<group>";
+		};
+		9F9494C61BFB04BF001E4F80 /* FriendRequestList */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494C71BFB04C8001E4F80 /* View */,
+				9F9494C91BFB04C8001E4F80 /* ViewController */,
+			);
+			path = FriendRequestList;
+			sourceTree = "<group>";
+		};
+		9F9494C71BFB04C8001E4F80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494D61BFB0518001E4F80 /* FriendRequestsListView.h */,
+				9F9494D71BFB0518001E4F80 /* FriendRequestsListView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F9494C91BFB04C8001E4F80 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494D31BFB050A001E4F80 /* FriendRequestsListViewController.h */,
+				9F9494D41BFB050A001E4F80 /* FriendRequestsListViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1182,6 +1250,7 @@
 				9F8C07B41BF6E3340018ACC7 /* tableList@3x.png in Resources */,
 				9F8C083E1BF7693F0018ACC7 /* Fog.png in Resources */,
 				9F8C07A41BF6CE490018ACC7 /* Logo@3x.png in Resources */,
+				9F9494BB1BFACD9C001E4F80 /* backButton.png in Resources */,
 				9FC1BAE81BF177CC00FD46D0 /* Icon-60.png in Resources */,
 				9FC1BAE01BF177CC00FD46D0 /* Icon-256.png in Resources */,
 				9F1202791BF04FCB002C508C /* 请删除.rtf in Resources */,
@@ -1266,6 +1335,7 @@
 				9F12020C1BF03F4A002C508C /* main.m in Sources */,
 				9F9494B81BFA03C9001E4F80 /* AddFriendView.m in Sources */,
 				9F1202871BF0636D002C508C /* LoginView.m in Sources */,
+				9F9494C11BFACE7F001E4F80 /* FriendRequestView.m in Sources */,
 				9F9494A21BF9D448001E4F80 /* YCSearchUsersViewController.m in Sources */,
 				9F8C07FD1BF71E800018ACC7 /* SDWebImageCompat.m in Sources */,
 				9F8C07FC1BF71E800018ACC7 /* SDImageCache.m in Sources */,
@@ -1286,9 +1356,12 @@
 				9F459F361BF606DF001D9B7F /* FriendListView.m in Sources */,
 				9F8C08001BF71E800018ACC7 /* SDWebImageDownloaderOperation.m in Sources */,
 				9F8C07A71BF6D6080018ACC7 /* UserImageView.m in Sources */,
+				9F9494BE1BFACE72001E4F80 /* FriendRequestViewController.m in Sources */,
 				9F9494981BF9CBF7001E4F80 /* YCUnreadListView.m in Sources */,
 				9F12026C1BF04FCB002C508C /* AppDelegate.m in Sources */,
 				9F8C08021BF71E800018ACC7 /* SDWebImagePrefetcher.m in Sources */,
+				9F9494C51BFACF2D001E4F80 /* YCFriendRequestListButton.m in Sources */,
+				9F9494D81BFB0518001E4F80 /* FriendRequestsListView.m in Sources */,
 				9F8C08061BF71E800018ACC7 /* UIImage+WebP.m in Sources */,
 				9F8C08011BF71E800018ACC7 /* SDWebImageManager.m in Sources */,
 				9F9494B51BFA03BE001E4F80 /* AddFriendViewController.m in Sources */,
@@ -1299,6 +1372,7 @@
 				9F29FF671BF4C29C00232E8E /* RegisterSettingsViewController.m in Sources */,
 				9F1202A01BF06D1D002C508C /* UIShakeView.m in Sources */,
 				9F29FF4D1BF463D000232E8E /* YCUserImageManager.m in Sources */,
+				9F9494D51BFB050A001E4F80 /* FriendRequestsListViewController.m in Sources */,
 				9F8C08091BF71E800018ACC7 /* UIView+WebCacheOperation.m in Sources */,
 				9F8C08071BF71E800018ACC7 /* UIImageView+HighlightedWebCache.m in Sources */,
 				9F459EFA1BF58773001D9B7F /* imagePickerChooseView.m in Sources */,

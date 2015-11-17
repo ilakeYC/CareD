@@ -105,6 +105,12 @@ static NSString *const tableListCellID = @"tableListCell";
     [self.tableView reloadData];
 }
 
+- (void)setFriendArray:(NSArray *)friendArray {
+    _friendArray = friendArray;
+    
+    [self.tableView reloadData];
+    
+}
 
 #pragma mark - collection view delegate 集合视图代理
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -126,10 +132,12 @@ static NSString *const tableListCellID = @"tableListCell";
 
 #pragma mark - table view delegate 表视图代理
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return _friendArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     tableListCell *cell = [tableView dequeueReusableCellWithIdentifier:tableListCellID forIndexPath:indexPath];
+    cell.user = _friendArray[indexPath.row];
+    
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

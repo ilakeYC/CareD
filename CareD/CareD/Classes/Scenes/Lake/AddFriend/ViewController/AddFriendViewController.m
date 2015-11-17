@@ -9,13 +9,14 @@
 #import "AddFriendViewController.h"
 #import "AddFriendView.h"
 
-@interface AddFriendViewController ()
+@interface AddFriendViewController ()<YCUserFriendRequestManagerDelegate>
 
 @property (nonatomic,strong) AddFriendView *addFriendView;
 
 @end
 
 @implementation AddFriendViewController
+
 
 - (void)loadView {
     self.addFriendView = [[AddFriendView alloc] initWithFrame:CareD_Lake_MainScreenBounds];
@@ -24,12 +25,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-}
-
-- (void)setUser:(AVUser *)user {
-    _user = user;
-    [[YCUserImageManager sharedUserImage] getImageUrlWithUser:user handel:^(NSString *URL) {
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.addFriendView.cancelButton];
+    [self.addFriendView.cancelButton addTarget:self action:@selector(backToLastVC) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    #pragma mark - 加载user数据
+    [[YCUserImageManager sharedUserImage] getImageUrlWithUser:_user handel:^(NSString *URL) {
         if (!URL) {
             return ;
         }
@@ -37,11 +38,61 @@
         
     }];
     
+    NSString *nickName = _user[@"nickName"];
+    
+    self.addFriendView.userNickNameLabel.text = [NSString stringWithFormat:@"%@还不是您的好友\n如果需要添加好友请点击发送请求",nickName];
+    
+    
+    
+    self.navigationItem.titleView = ({
+    
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+        label.text = _user[@"nickName"];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.font = [UIFont systemFontOfSize:22];
+        label.textColor = [UIColor whiteColor];
+        label;
+        
+    });
+    
+    [self.addFriendView.sendRequestButton addTarget:self action:@selector(addFriendButtonAction) forControlEvents:(UIControlEventTouchUpInside)];
 }
 
+- (void)setUser:(AVUser *)user {
+    NSLog(@"设置user");
+    _user = user;
+    
+}
+
+- (void)addFriendButtonAction {
+    NSString *password = self.addFriendView.passwordTextField.text;
+    if ([password isEqualToString:@""]) {
+        
+        self.addFriendView.passwordTipsLabel.text = @"必须有密码";
+#warning - 判断没有密码
+        
+    } else {
+        self.addFriendView.passwordTipsLabel.text = @"";
+        [[YCUserFriendRequestManager sharedUserFriendRequestManager] sendFriendRequestToUser:_user withPassword:password];
+        [YCUserFriendRequestManager sharedUserFriendRequestManager].delegate = self;
+        self.addFriendView.sendRequestButton.enabled = NO;
+    }
+}
 
 - (void)backToLastVC {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+#pragma mark - 好友请求发送
+- (void)userFriendRequestSendingRequestSuccessedToUser:(AVUser *)user andPassword:(NSString *)password {
+    NSLog(@"发送成功");
+    self.addFriendView.sendRequestButton.enabled = YES;
+    [self backToLastVC];
+}
+- (void)userFriendRequestSendingRequestFailureToUser:(AVUser *)user andPassword:(NSString *)password {
+    self.addFriendView.sendRequestButton.enabled = YES;
+    
+    
+}
 @end

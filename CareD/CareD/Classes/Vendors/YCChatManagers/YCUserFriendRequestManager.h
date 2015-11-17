@@ -28,6 +28,10 @@ typedef NS_ENUM(NSInteger, YCUserFriendRequest) {
 + (instancetype)sharedUserFriendRequestManager;
 
 
+///可以获取所有请求列表
+@property (nonatomic,strong) NSMutableDictionary *requestListDic;
+
+
 ////将密码合成用户好友请求并发送给某个用户
 - (void)sendFriendRequestToUser:(AVUser *)user withPassword:(NSString *)password;
 

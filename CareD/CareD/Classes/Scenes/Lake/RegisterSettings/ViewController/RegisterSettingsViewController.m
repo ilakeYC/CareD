@@ -331,7 +331,6 @@
     friendListNC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
     [self presentViewController:friendListNC animated:YES completion:^{
-        self.view = nil;
     }];
 }
 

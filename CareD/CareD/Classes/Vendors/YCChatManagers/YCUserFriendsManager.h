@@ -27,6 +27,8 @@
 
 ///按照用户名查找联系人
 - (void)searchFriendByUserName:(NSString *)userName;
+- (void)searchFriendByUserName:(NSString *)userName result:(void(^)(AVUser *user))handel;
+- (AVUser *)searchFriendByUserNameAndReturn:(NSString *)userName;
 
 ///通过用户一级加密用户名搜索联系人
 - (void)searchFriendByUserNameForScan:(NSString *)userNameForScan;

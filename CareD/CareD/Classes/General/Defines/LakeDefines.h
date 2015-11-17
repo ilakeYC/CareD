@@ -34,6 +34,17 @@
 #import "FriendListViewController.h"        //- 好友列表_视图控制器
 #import "YCSearchUsersViewController.h"     //- 查找联系人_视图控制器
 #import "AddFriendViewController.h"         //- 添加好友发送密码时_控制器
+#import "FriendRequestViewController.h"     //- 处理好友请求_视图控制器
+#import "FriendRequestsListViewController.h"//- 好友请求列表
+
+
+
+
+
+
+
+
+
 
 
 #import "YCUsers.h"                 //- 用户层

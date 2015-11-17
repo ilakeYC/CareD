@@ -42,6 +42,7 @@ static NSInteger const userInfoBarHight = 49;
     [self makeLabels];
     [self makeTheFriendListView];
     [self makeUnreadListView];
+    [self makeFriendRequestButton];
 }
 //绘制用户详情栏背景
 - (void)makeUserInfoBar {
@@ -150,7 +151,7 @@ static NSInteger const userInfoBarHight = 49;
     [self.contentView sendSubviewToBack:self.theFriendListView];
     
 }
-
+//添加未读提示
 - (void)makeUnreadListView {
     self.userInfoBarTopLeftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.userInfoBarLeftView.frame.size.width, self.userInfoBarLeftView.frame.size.height)];
     [self.userInfoView addSubview:self.userInfoBarTopLeftView];
@@ -160,6 +161,13 @@ static NSInteger const userInfoBarHight = 49;
     
     self.unreadListView = [[YCUnreadListView alloc] initWithFrame:self.userInfoBarTopLeftView.bounds];
     [self.userInfoBarTopLeftView addSubview:self.unreadListView];
+    
+}
+//添加好友请求提示
+- (void)makeFriendRequestButton {
+    
+    self.friendRequestButton = [[YCFriendRequestListButton alloc] initWithFrame:self.userInfoBarTopRightView.bounds];
+    [self.userInfoBarTopRightView addSubview:self.friendRequestButton];
     
 }
 

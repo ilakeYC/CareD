@@ -21,6 +21,17 @@
 
 @implementation tableListCell
 
+- (void)setUser:(AVUser *)user {
+    self.mainTitleLabel.text = user[@"nickName"];
+    self.mainImageView.image = [UIImage imageNamed:@"Icon-512"];
+    
+    [[YCUserImageManager sharedUserImage] getImageWithUser:user handel:^(UIImage *image) {
+       
+        self.mainImageView.image = image;
+        
+    }];
+}
+
 - (void)awakeFromNib {
     
     self.shadowView.layer.cornerRadius = 10;

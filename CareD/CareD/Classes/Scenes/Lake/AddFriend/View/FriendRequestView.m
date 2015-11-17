@@ -1,20 +1,21 @@
 //
-//  AddFriendView.m
+//  FriendRequestView.m
 //  CareD
 //
-//  Created by LakesMac on 15/11/16.
+//  Created by LakesMac on 15/11/17.
 //  Copyright © 2015年 Tec-Erica. All rights reserved.
 //
 
-#import "AddFriendView.h"
+#import "FriendRequestView.h"
 
-@interface AddFriendView ()
+
+@interface FriendRequestView ()
 {
     BOOL _keyboardUP;
 }
 @end
 
-@implementation AddFriendView
+@implementation FriendRequestView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -63,7 +64,7 @@
     self.requestLabelShadowView.layer.shadowOpacity = 0.7;
     
     [self.imageViewShadowView addSubview:self.requestLabelShadowView];
-
+    
     
     [self makeLabels];
     [self addKeyBoardNotifaction];
@@ -90,7 +91,7 @@
     [self.requestLabelShadowView addSubview:self.passwordTextField];
     self.passwordTipsLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.passwordTextField.frame.origin.x, self.passwordTextField.frame.origin.y + self.passwordTextField.frame.size.height + 5, self.passwordTextField.frame.size.width, 60)];
     self.passwordTipsLabel.textColor = [UIColor grayColor];
-    self.passwordTipsLabel.text = @"对方接收到您的好友请求之后需要输入密码才能通过请求\n在您发送好友请求之后，请联系您的朋友\n告知密码";
+    self.passwordTipsLabel.text = @"请与您的好友现实中取得联系，得到密码";
     self.passwordTipsLabel.numberOfLines = 0;
     self.passwordTipsLabel.textAlignment = NSTextAlignmentCenter;
     self.passwordTipsLabel.adjustsFontSizeToFitWidth = YES;
@@ -104,7 +105,7 @@
     self.sendRequestButton.center = CGPointMake(self.requestLabelShadowView.frame.size.width / 2, self.sendRequestButton.center.y);
     self.sendRequestButton.backgroundColor = CareD_Lake_COLOR_AbsintheGreen;
     [self.sendRequestButton setTintColor:[UIColor whiteColor]];
-    [self.sendRequestButton setTitle:@"发送请求" forState:(UIControlStateNormal)];
+    [self.sendRequestButton setTitle:@"验证" forState:(UIControlStateNormal)];
     self.sendRequestButton.layer.borderColor = CareD_Lake_COLOR_AbsintheGreen.CGColor;
     self.sendRequestButton.layer.borderWidth = 1;
     self.sendRequestButton.layer.cornerRadius = 5;
@@ -131,7 +132,7 @@
         return;
     }
     [UIView animateWithDuration:0.3 animations:^{
-       
+        
         CGRect frame = self.requestLabelShadowView.frame;
         frame.origin.y = (self.imageViewMasksView.frame.size.height - 30 ) / 2;
         self.requestLabelShadowView.frame = frame;
@@ -158,4 +159,6 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self endEditing:YES];
 }
+
+
 @end
