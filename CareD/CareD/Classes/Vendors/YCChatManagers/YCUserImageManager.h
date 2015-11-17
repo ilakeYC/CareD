@@ -30,7 +30,6 @@
 - (void)userImageManagerCurrentUserImageURLDownComplete:(NSString *)url;
 ///用户头像下载完成
 - (void)userImageManagerCurrentUserImageDownComplete:(UIImage *)image;
-
 @end
 
 @interface YCUserImageManager : NSObject
@@ -50,9 +49,15 @@
 
 ///下载用户头像
 - (void)getCurrentUserImage;
+- (void)getCurrentUserImageURL;
 ///下载所有好友
 - (NSArray *)getCurrentUserAllFriends;
 ///下载好友列表头像
 - (void)getCurrentUserFriendImage;
-
+///下载好友头像ULR
+- (void)getCurrentUserFriendImageURL;
+///按照用户下载头像地址
+- (void)getImageUrlWithUser:(AVUser *)user handel:(void(^)(NSString *URL))URL;
+///下载用户头像缩略图
+- (void)getImageWithUser:(AVUser *)user handel:(void(^)(UIImage *image))handle;
 @end

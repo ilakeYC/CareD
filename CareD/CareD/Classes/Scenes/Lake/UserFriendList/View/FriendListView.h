@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "UserImageView.h"
 #import "YCFriendListView.h"
+#import "YCUnreadListView.h"
 
 @interface FriendListView : UIView
 
 @property (nonatomic,strong) UIView *contentView;
 
+@property (nonatomic,strong) UIView *userInfoView;
 @property (nonatomic,strong) UIView *userInfoBar;
 @property (nonatomic,strong) UIView *userImageBackView;
 @property (nonatomic,strong) UIView *userImageMasksView;
@@ -28,6 +30,10 @@
 @property (nonatomic,strong) UILabel *locationLabel;
 @property (nonatomic,strong) UILabel *weatherLabel;
 
+
+@property (nonatomic,strong) UIView *userInfoBarTopLeftView;
+@property (nonatomic,strong) UIView *userInfoBarTopRightView;
+@property (nonatomic,strong) YCUnreadListView *unreadListView;
 
 @property (nonatomic,strong) YCFriendListView *theFriendListView;
 @end

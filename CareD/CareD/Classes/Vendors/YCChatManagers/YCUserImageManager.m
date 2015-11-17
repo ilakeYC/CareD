@@ -113,6 +113,44 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
         }];
     }];
 }
+//下载当前用户头像地址
+- (void)getCurrentUserImageURL {
+    AVUser *currentUser = [AVUser currentUser];
+    NSString *userName = currentUser.username;
+    
+    AVQuery *query = [AVQuery queryWithClassName:USERIMAGE_CLASSNAME];
+    [query whereKey:@"userName" equalTo:userName];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        AVObject *currentImageObject = [objects firstObject];
+        
+        AVFile *imageFile = currentImageObject[@"image"];
+        
+        self.currentUserImageUrl = imageFile.url;
+        
+        if (self.delegate && [self.delegate respondsToSelector:@selector(userImageManagerCurrentUserImageURLDownComplete:)]) {
+            [self.delegate userImageManagerCurrentUserImageURLDownComplete:imageFile.url];
+        }
+    }];
+}
+
+- (void)getImageUrlWithUser:(AVUser *)user handel:(void (^)(NSString *URL))URL {
+    
+    NSString *userName = user.username;
+    
+    AVQuery *query = [AVQuery queryWithClassName:USERIMAGE_CLASSNAME];
+    [query whereKey:@"userName" equalTo:userName];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        AVObject *currentImageObject = [objects firstObject];
+        
+        AVFile *imageFile = currentImageObject[@"image"];
+        NSString *url = imageFile.url;
+        
+        URL(url);
+        
+    }];
+}
 
 - (void)setCurrentUserImageUrl:(NSString *)currentUserImageUrl {
     _currentUserImageUrl = currentUserImageUrl;
@@ -163,10 +201,62 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
     }
 }
 
+
+- (void)getImageWithUser:(AVUser *)user handel:(void (^)(UIImage *))handle {
+    
+    NSString *userName = user.username;
+    
+    AVQuery *query = [AVQuery queryWithClassName:USERIMAGE_CLASSNAME];
+    [query whereKey:@"userName" equalTo:userName];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSLog(@"%@",objects);
+        AVObject *currentImageObject = [objects firstObject];
+        
+        AVFile *imageFile = currentImageObject[@"image"];
+        
+        [imageFile getThumbnail:YES width:100 height:100 withBlock:^(UIImage *image, NSError *error) {
+            NSLog(@"\n%d,\n%s\n",__LINE__,__FUNCTION__);
+            handle(image);
+        }];
+    }];
+
+}
+
+
+
+- (void)getCurrentUserFriendImageURL {
+    NSArray *friendListArray = [self getCurrentUserAllFriends];
+    
+    if (!friendListArray) {
+        return;
+    }
+    [self.friendListImageListDictionary addObserver:self forKeyPath:@"count" options:(NSKeyValueObservingOptionNew) context:"dictCount"];
+    
+    self.numberOfFriends = friendListArray.count;
+    
+    for (AVUser *user in friendListArray) {
+        
+        NSString *userName = user.username;
+        NSString *userNickName = user[@"nickName"];
+        
+        AVQuery *query = [AVQuery queryWithClassName:USERIMAGE_CLASSNAME];
+        [query whereKey:@"userName" equalTo:userName];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            
+            AVObject *currentImageObject = [objects firstObject];
+            
+            AVFile *imageFile = currentImageObject[@"image"];
+            [self.friendListImageUrlListDictionary addObserver:self forKeyPath:@"count" options:(NSKeyValueObservingOptionNew) context:@"friendImageURL"];
+            [self.friendListImageUrlListDictionary setObject:imageFile.url forKey:userNickName];
+        }];
+    }
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     
     if (self.friendListImageUrlListDictionary.count == self.numberOfFriends) {
-        
+        [self.friendListImageUrlListDictionary removeObjectForKey:@"count"];
         if (self.delegate && [self.delegate respondsToSelector:@selector(friendListImageListURLDownLoadComplete:)]) {
             [self.delegate friendListImageListURLDownLoadComplete:self.friendListImageUrlListDictionary];
         }
@@ -175,7 +265,6 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
     
     
     if (self.friendListImageListDictionary.count == self.numberOfFriends) {
-     
         [self.friendListImageListDictionary removeObserver:self forKeyPath:@"count" context:@"dictCount"];
         if (self.delegate && [self.delegate respondsToSelector:@selector(friendListImageListDownLoadComplete)]) {
             [self.delegate friendListImageListDownLoadComplete];

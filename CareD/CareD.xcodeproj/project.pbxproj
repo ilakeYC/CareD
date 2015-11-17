@@ -112,6 +112,14 @@
 		9F8C084A1BF7693F0018ACC7 /* Sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C08351BF7693F0018ACC7 /* Sunny.png */; };
 		9F8C084B1BF7693F0018ACC7 /* Sunny@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C08361BF7693F0018ACC7 /* Sunny@2x.png */; };
 		9F8C084C1BF7693F0018ACC7 /* Sunny@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F8C08371BF7693F0018ACC7 /* Sunny@3x.png */; };
+		9F9494971BF9CBF7001E4F80 /* UnreadTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494941BF9CBF7001E4F80 /* UnreadTipView.m */; };
+		9F9494981BF9CBF7001E4F80 /* YCUnreadListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494961BF9CBF7001E4F80 /* YCUnreadListView.m */; };
+		9F9494A21BF9D448001E4F80 /* YCSearchUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494A11BF9D448001E4F80 /* YCSearchUsersViewController.m */; };
+		9F9494A51BF9D452001E4F80 /* YCSearchUsersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494A41BF9D452001E4F80 /* YCSearchUsersView.m */; };
+		9F9494AA1BF9DFDA001E4F80 /* YCSearchUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494A81BF9DFDA001E4F80 /* YCSearchUserCell.m */; };
+		9F9494AB1BF9DFDA001E4F80 /* YCSearchUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F9494A91BF9DFDA001E4F80 /* YCSearchUserCell.xib */; };
+		9F9494B51BFA03BE001E4F80 /* AddFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494B41BFA03BE001E4F80 /* AddFriendViewController.m */; };
+		9F9494B81BFA03C9001E4F80 /* AddFriendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9494B71BFA03C9001E4F80 /* AddFriendView.m */; };
 		9FC1BAD61BF177CC00FD46D0 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC1BABC1BF177CC00FD46D0 /* Icon-100.png */; };
 		9FC1BAD71BF177CC00FD46D0 /* Icon-108.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC1BABD1BF177CC00FD46D0 /* Icon-108.png */; };
 		9FC1BAD81BF177CC00FD46D0 /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FC1BABE1BF177CC00FD46D0 /* Icon-114.png */; };
@@ -221,8 +229,8 @@
 		9F8C07C21BF70FED0018ACC7 /* CircleListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleListCell.h; sourceTree = "<group>"; };
 		9F8C07C31BF70FED0018ACC7 /* CircleListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleListCell.m; sourceTree = "<group>"; };
 		9F8C07C41BF70FED0018ACC7 /* CircleListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircleListCell.xib; sourceTree = "<group>"; };
-		9F8C07C71BF712A10018ACC7 /* RGCardViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGCardViewLayout.h; sourceTree = "<group>"; };
-		9F8C07C81BF712A10018ACC7 /* RGCardViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGCardViewLayout.m; sourceTree = "<group>"; };
+		9F8C07C71BF712A10018ACC7 /* RGCardViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGCardViewLayout.h; path = ../RGCardViewLayout.h; sourceTree = "<group>"; };
+		9F8C07C81BF712A10018ACC7 /* RGCardViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGCardViewLayout.m; path = ../RGCardViewLayout.m; sourceTree = "<group>"; };
 		9F8C07D01BF715600018ACC7 /* circleList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circleList.png; sourceTree = "<group>"; };
 		9F8C07D11BF715600018ACC7 /* circleList@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circleList@2x.png"; sourceTree = "<group>"; };
 		9F8C07D21BF715600018ACC7 /* circleList@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "circleList@3x.png"; sourceTree = "<group>"; };
@@ -293,6 +301,21 @@
 		9F8C08351BF7693F0018ACC7 /* Sunny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sunny.png; sourceTree = "<group>"; };
 		9F8C08361BF7693F0018ACC7 /* Sunny@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunny@2x.png"; sourceTree = "<group>"; };
 		9F8C08371BF7693F0018ACC7 /* Sunny@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Sunny@3x.png"; sourceTree = "<group>"; };
+		9F9494931BF9CBF7001E4F80 /* UnreadTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnreadTipView.h; sourceTree = "<group>"; };
+		9F9494941BF9CBF7001E4F80 /* UnreadTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnreadTipView.m; sourceTree = "<group>"; };
+		9F9494951BF9CBF7001E4F80 /* YCUnreadListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCUnreadListView.h; sourceTree = "<group>"; };
+		9F9494961BF9CBF7001E4F80 /* YCUnreadListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCUnreadListView.m; sourceTree = "<group>"; };
+		9F9494A01BF9D448001E4F80 /* YCSearchUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCSearchUsersViewController.h; sourceTree = "<group>"; };
+		9F9494A11BF9D448001E4F80 /* YCSearchUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCSearchUsersViewController.m; sourceTree = "<group>"; };
+		9F9494A31BF9D452001E4F80 /* YCSearchUsersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCSearchUsersView.h; sourceTree = "<group>"; };
+		9F9494A41BF9D452001E4F80 /* YCSearchUsersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCSearchUsersView.m; sourceTree = "<group>"; };
+		9F9494A71BF9DFDA001E4F80 /* YCSearchUserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCSearchUserCell.h; sourceTree = "<group>"; };
+		9F9494A81BF9DFDA001E4F80 /* YCSearchUserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCSearchUserCell.m; sourceTree = "<group>"; };
+		9F9494A91BF9DFDA001E4F80 /* YCSearchUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YCSearchUserCell.xib; sourceTree = "<group>"; };
+		9F9494B31BFA03BE001E4F80 /* AddFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendViewController.h; sourceTree = "<group>"; };
+		9F9494B41BFA03BE001E4F80 /* AddFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendViewController.m; sourceTree = "<group>"; };
+		9F9494B61BFA03C9001E4F80 /* AddFriendView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendView.h; sourceTree = "<group>"; };
+		9F9494B71BFA03C9001E4F80 /* AddFriendView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendView.m; sourceTree = "<group>"; };
 		9FC1BABC1BF177CC00FD46D0 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
 		9FC1BABD1BF177CC00FD46D0 /* Icon-108.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-108.png"; sourceTree = "<group>"; };
 		9FC1BABE1BF177CC00FD46D0 /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-114.png"; sourceTree = "<group>"; };
@@ -525,6 +548,8 @@
 		9F1202601BF04FCB002C508C /* Lake */ = {
 			isa = PBXGroup;
 			children = (
+				9F9494AC1BFA0389001E4F80 /* AddFriend */,
+				9F9494991BF9D41E001E4F80 /* SearchUsers */,
 				9F459F2A1BF606B7001D9B7F /* UserFriendList */,
 				9F29FF5D1BF4C21D00232E8E /* RegisterSettings */,
 				9F12027B1BF06348002C508C /* Login */,
@@ -764,10 +789,7 @@
 		9F459F2B1BF606B7001D9B7F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9F8C08131BF731990018ACC7 /* YCFuncListView.h */,
-				9F8C08141BF731990018ACC7 /* YCFuncListView.m */,
-				9F8C07C71BF712A10018ACC7 /* RGCardViewLayout.h */,
-				9F8C07C81BF712A10018ACC7 /* RGCardViewLayout.m */,
+				9F9494911BF9CBF7001E4F80 /* Unread */,
 				9F8C07C11BF70FD00018ACC7 /* Cells */,
 				9F459F341BF606DF001D9B7F /* FriendListView.h */,
 				9F459F351BF606DF001D9B7F /* FriendListView.m */,
@@ -775,6 +797,8 @@
 				9F8C07A61BF6D6080018ACC7 /* UserImageView.m */,
 				9F8C07BB1BF6E6400018ACC7 /* YCFriendListView.h */,
 				9F8C07BC1BF6E6400018ACC7 /* YCFriendListView.m */,
+				9F8C08131BF731990018ACC7 /* YCFuncListView.h */,
+				9F8C08141BF731990018ACC7 /* YCFuncListView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -831,6 +855,8 @@
 		9F8C07C11BF70FD00018ACC7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9F8C07C71BF712A10018ACC7 /* RGCardViewLayout.h */,
+				9F8C07C81BF712A10018ACC7 /* RGCardViewLayout.m */,
 				9F8C07C21BF70FED0018ACC7 /* CircleListCell.h */,
 				9F8C07C31BF70FED0018ACC7 /* CircleListCell.m */,
 				9F8C07C41BF70FED0018ACC7 /* CircleListCell.xib */,
@@ -907,6 +933,90 @@
 				9F8C08371BF7693F0018ACC7 /* Sunny@3x.png */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		9F9494911BF9CBF7001E4F80 /* Unread */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494921BF9CBF7001E4F80 /* UnreadTipView */,
+				9F9494951BF9CBF7001E4F80 /* YCUnreadListView.h */,
+				9F9494961BF9CBF7001E4F80 /* YCUnreadListView.m */,
+			);
+			path = Unread;
+			sourceTree = "<group>";
+		};
+		9F9494921BF9CBF7001E4F80 /* UnreadTipView */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494931BF9CBF7001E4F80 /* UnreadTipView.h */,
+				9F9494941BF9CBF7001E4F80 /* UnreadTipView.m */,
+			);
+			path = UnreadTipView;
+			sourceTree = "<group>";
+		};
+		9F9494991BF9D41E001E4F80 /* SearchUsers */ = {
+			isa = PBXGroup;
+			children = (
+				9F94949A1BF9D42A001E4F80 /* View */,
+				9F94949C1BF9D42A001E4F80 /* ViewController */,
+			);
+			path = SearchUsers;
+			sourceTree = "<group>";
+		};
+		9F94949A1BF9D42A001E4F80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494A61BF9DFBD001E4F80 /* Cell */,
+				9F9494A31BF9D452001E4F80 /* YCSearchUsersView.h */,
+				9F9494A41BF9D452001E4F80 /* YCSearchUsersView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F94949C1BF9D42A001E4F80 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494A01BF9D448001E4F80 /* YCSearchUsersViewController.h */,
+				9F9494A11BF9D448001E4F80 /* YCSearchUsersViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		9F9494A61BF9DFBD001E4F80 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494A71BF9DFDA001E4F80 /* YCSearchUserCell.h */,
+				9F9494A81BF9DFDA001E4F80 /* YCSearchUserCell.m */,
+				9F9494A91BF9DFDA001E4F80 /* YCSearchUserCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9F9494AC1BFA0389001E4F80 /* AddFriend */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494AD1BFA0393001E4F80 /* View */,
+				9F9494AF1BFA0393001E4F80 /* ViewController */,
+			);
+			path = AddFriend;
+			sourceTree = "<group>";
+		};
+		9F9494AD1BFA0393001E4F80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494B61BFA03C9001E4F80 /* AddFriendView.h */,
+				9F9494B71BFA03C9001E4F80 /* AddFriendView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9F9494AF1BFA0393001E4F80 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9F9494B31BFA03BE001E4F80 /* AddFriendViewController.h */,
+				9F9494B41BFA03BE001E4F80 /* AddFriendViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		9FC1BABB1BF177CC00FD46D0 /* icon */ = {
@@ -1085,6 +1195,7 @@
 				9F8C08431BF7693F0018ACC7 /* Rain_big@3x.png in Resources */,
 				9FC1BAE11BF177CC00FD46D0 /* Icon-28.png in Resources */,
 				9F8C083B1BF7693F0018ACC7 /* Cloudy_small.png in Resources */,
+				9F9494AB1BF9DFDA001E4F80 /* YCSearchUserCell.xib in Resources */,
 				9F8C07B81BF6E5760018ACC7 /* funcButton.png in Resources */,
 				9F8C08461BF7693F0018ACC7 /* Rain_small@3x.png in Resources */,
 				9F8C084A1BF7693F0018ACC7 /* Sunny.png in Resources */,
@@ -1148,18 +1259,23 @@
 				9F8C07FE1BF71E800018ACC7 /* SDWebImageDecoder.m in Sources */,
 				9F1202841BF06360002C508C /* LoginViewController.m in Sources */,
 				9F8C07FA1BF71E800018ACC7 /* MKAnnotationView+WebCache.m in Sources */,
+				9F9494971BF9CBF7001E4F80 /* UnreadTipView.m in Sources */,
 				9F1202181BF03F4A002C508C /* CareD.xcdatamodeld in Sources */,
 				9F29FF4C1BF463D000232E8E /* YCUserFriendsManager.m in Sources */,
 				9F8C07C91BF712A10018ACC7 /* RGCardViewLayout.m in Sources */,
 				9F12020C1BF03F4A002C508C /* main.m in Sources */,
+				9F9494B81BFA03C9001E4F80 /* AddFriendView.m in Sources */,
 				9F1202871BF0636D002C508C /* LoginView.m in Sources */,
+				9F9494A21BF9D448001E4F80 /* YCSearchUsersViewController.m in Sources */,
 				9F8C07FD1BF71E800018ACC7 /* SDWebImageCompat.m in Sources */,
 				9F8C07FC1BF71E800018ACC7 /* SDImageCache.m in Sources */,
 				9F8C08051BF71E800018ACC7 /* UIImage+MultiFormat.m in Sources */,
+				9F9494A51BF9D452001E4F80 /* YCSearchUsersView.m in Sources */,
 				9F8C08041BF71E800018ACC7 /* UIImage+GIF.m in Sources */,
 				9F8C07FF1BF71E800018ACC7 /* SDWebImageDownloader.m in Sources */,
 				9F29FF571BF46DA800232E8E /* MMMaterialDesignSpinner.m in Sources */,
 				9F8C08081BF71E800018ACC7 /* UIImageView+WebCache.m in Sources */,
+				9F9494AA1BF9DFDA001E4F80 /* YCSearchUserCell.m in Sources */,
 				9F8C08031BF71E800018ACC7 /* UIButton+WebCache.m in Sources */,
 				9F459F331BF606D5001D9B7F /* FriendListViewController.m in Sources */,
 				9F29FF4E1BF463D000232E8E /* YCUserManager.m in Sources */,
@@ -1170,10 +1286,12 @@
 				9F459F361BF606DF001D9B7F /* FriendListView.m in Sources */,
 				9F8C08001BF71E800018ACC7 /* SDWebImageDownloaderOperation.m in Sources */,
 				9F8C07A71BF6D6080018ACC7 /* UserImageView.m in Sources */,
+				9F9494981BF9CBF7001E4F80 /* YCUnreadListView.m in Sources */,
 				9F12026C1BF04FCB002C508C /* AppDelegate.m in Sources */,
 				9F8C08021BF71E800018ACC7 /* SDWebImagePrefetcher.m in Sources */,
 				9F8C08061BF71E800018ACC7 /* UIImage+WebP.m in Sources */,
 				9F8C08011BF71E800018ACC7 /* SDWebImageManager.m in Sources */,
+				9F9494B51BFA03BE001E4F80 /* AddFriendViewController.m in Sources */,
 				9F8C08111BF72D120018ACC7 /* tableListCell.m in Sources */,
 				9F8C07FB1BF71E800018ACC7 /* NSData+ImageContentType.m in Sources */,
 				9F459F391BF6106B001D9B7F /* YCUserFriendRequestManager.m in Sources */,

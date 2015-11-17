@@ -10,4 +10,6 @@
 
 @interface tableListCell : UITableViewCell
 
+@property (nonatomic,strong) AVUser *user;
+
 @end

@@ -116,7 +116,11 @@
     friendListNC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     
     [self presentViewController:friendListNC animated:YES completion:^{
-        
+        NSLog(@"登陆后");
+        self.view = nil;
     }];
+}
+- (void)dealloc {
+    NSLog(@"登陆后");
 }
 @end

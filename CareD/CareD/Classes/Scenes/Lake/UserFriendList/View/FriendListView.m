@@ -41,11 +41,13 @@ static NSInteger const userInfoBarHight = 49;
     [self makeUserImageView];
     [self makeLabels];
     [self makeTheFriendListView];
+    [self makeUnreadListView];
 }
 //绘制用户详情栏背景
 - (void)makeUserInfoBar {
     UIView *userInfoView = [[UIView alloc] initWithFrame:CGRectMake(0, self.contentView.frame.size.height - userInfoBarHight * 2, CareD_Lake_MainScreenBounds.size.width, userInfoBarHight * 2)];
     [self.contentView addSubview:userInfoView];
+    self.userInfoView = userInfoView;
     
     
     UIView *userImageBackViewForShadow = [[UIView alloc] initWithFrame:CGRectMake(0, 0, userInfoBarHight * 2, userInfoBarHight * 2)];
@@ -148,5 +150,18 @@ static NSInteger const userInfoBarHight = 49;
     [self.contentView sendSubviewToBack:self.theFriendListView];
     
 }
+
+- (void)makeUnreadListView {
+    self.userInfoBarTopLeftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.userInfoBarLeftView.frame.size.width, self.userInfoBarLeftView.frame.size.height)];
+    [self.userInfoView addSubview:self.userInfoBarTopLeftView];
+    
+    self.userInfoBarTopRightView = [[UIView alloc] initWithFrame:CGRectMake(self.userInfoBarRightView.frame.origin.x, 0, self.userInfoBarRightView.frame.size.width, self.userInfoBarRightView.frame.size.height)];
+    [self.userInfoView addSubview:self.userInfoBarTopRightView];
+    
+    self.unreadListView = [[YCUnreadListView alloc] initWithFrame:self.userInfoBarTopLeftView.bounds];
+    [self.userInfoBarTopLeftView addSubview:self.unreadListView];
+    
+}
+
 
 @end

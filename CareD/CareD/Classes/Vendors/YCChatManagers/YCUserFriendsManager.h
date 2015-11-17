@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol YCUserFriendsManager;
+@protocol YCUserFriendsManagerDelegate;
 @interface YCUserFriendsManager : NSObject
 
-@property (nonatomic,assign) id<YCUserFriendsManager> delegate;
+@property (nonatomic,assign) id<YCUserFriendsManagerDelegate> delegate;
 
 + (instancetype)sharedFriendsManager;
 
@@ -35,7 +35,7 @@
 - (BOOL)addFriend:(AVUser *)user;
 @end
 
-@protocol YCUserFriendsManager <NSObject>
+@protocol YCUserFriendsManagerDelegate <NSObject>
 
 @optional
 

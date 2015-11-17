@@ -32,6 +32,9 @@
 #import "RegisterViewController.h"          //- 注册_视图控制器
 #import "RegisterSettingsViewController.h"  //- 注册后的初始化设置_视图控制器
 #import "FriendListViewController.h"        //- 好友列表_视图控制器
+#import "YCSearchUsersViewController.h"     //- 查找联系人_视图控制器
+#import "AddFriendViewController.h"         //- 添加好友发送密码时_控制器
+
 
 #import "YCUsers.h"                 //- 用户层
 
@@ -39,5 +42,6 @@
 #import "UIShakeView.h"       //- 抖动视图
 #import "DeformationButton.h" //- 首页按钮
 #import "UIImageView+WebCache.h" //
+#import "UnreadTipView.h"     //- 全局提示视图
 
 #endif /* LakeDefines_h */

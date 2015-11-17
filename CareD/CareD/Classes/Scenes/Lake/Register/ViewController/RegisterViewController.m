@@ -66,6 +66,7 @@
         registerSettingsNC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         
         [self presentViewController:registerSettingsNC animated:YES completion:^{
+            self.view = nil;
             
         }];
     }]];

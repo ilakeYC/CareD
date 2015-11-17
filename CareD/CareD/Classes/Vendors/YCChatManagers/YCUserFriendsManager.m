@@ -45,7 +45,7 @@
 
 - (void)searchFriendByNickName:(NSString *)nickName {
     AVQuery *query = [AVUser query];
-    [query whereKey:@"nickName" equalTo:nickName];
+    [query whereKey:@"nickName" containsString:nickName];
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendsManagerFriendSearchByNickNameStarted)]) {
         [self.delegate userFriendsManagerFriendSearchByNickNameStarted];

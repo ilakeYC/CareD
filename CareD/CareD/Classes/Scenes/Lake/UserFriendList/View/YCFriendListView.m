@@ -59,8 +59,6 @@ static NSString *const tableListCellID = @"tableListCell";
     self.tableView.tableFooterView = ({
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 49)];
         view;
-    
-    
     });
     
     
@@ -123,7 +121,6 @@ static NSString *const tableListCellID = @"tableListCell";
 {
     CircleListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:circleCellID forIndexPath:indexPath];
     
-    NSLog(@"%@",NSStringFromCGRect(cell.bounds));
     return cell;
 }
 

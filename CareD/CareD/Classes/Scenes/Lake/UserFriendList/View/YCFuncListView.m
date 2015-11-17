@@ -166,6 +166,7 @@
         CGRect effectViewFrame = self.effectView.frame;
         effectViewFrame.origin.x = self.contentView.frame.size.width;
         self.effectView.frame = effectViewFrame;
+        
     } completion:^(BOOL finished) {
         if (finished) {
             [UIView animateWithDuration:0.2 animations:^{
