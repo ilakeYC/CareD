@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="userImageCell" rowHeight="97" id="KGk-i7-Jjw" customClass="UserImageTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="96.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ge2-Hc-UPY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-512.png" translatesAutoresizingMaskIntoConstraints="NO" id="O2g-LN-asp">
+                                <rect key="frame" x="10" y="5" width="86.5" height="86.5"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="O2g-LN-asp" secondAttribute="height" id="rcp-XD-4LH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jME-oe-FKE">
+                                <rect key="frame" x="253" y="38" width="34" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="w6n-2I-5A9">
+                                <rect key="frame" x="8" y="89" width="271" height="2.5"/>
+                                <animations/>
+                                <color key="progressTintColor" red="0.98074494950000002" green="0.447176346" blue="0.10236284129999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="trackTintColor" red="0.96862745100000003" green="0.93333333330000001" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.53333333329999999" green="0.74117647060000003" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="O2g-LN-asp" firstAttribute="top" secondItem="Ge2-Hc-UPY" secondAttribute="top" constant="5" id="7H2-jb-zqR"/>
+                            <constraint firstAttribute="bottom" secondItem="w6n-2I-5A9" secondAttribute="bottom" constant="5.5" id="T0G-tn-fWE"/>
+                            <constraint firstItem="jME-oe-FKE" firstAttribute="centerY" secondItem="Ge2-Hc-UPY" secondAttribute="centerY" id="T1G-u6-rrZ"/>
+                            <constraint firstAttribute="bottom" secondItem="O2g-LN-asp" secondAttribute="bottom" constant="5" id="VGY-3q-MxZ"/>
+                            <constraint firstAttribute="trailing" secondItem="w6n-2I-5A9" secondAttribute="trailing" constant="8" id="avr-R9-83W"/>
+                            <constraint firstItem="w6n-2I-5A9" firstAttribute="leading" secondItem="Ge2-Hc-UPY" secondAttribute="leading" constant="8" id="hMG-FW-kk0"/>
+                            <constraint firstAttribute="trailing" secondItem="jME-oe-FKE" secondAttribute="trailing" id="l44-A4-hNf"/>
+                            <constraint firstItem="O2g-LN-asp" firstAttribute="leading" secondItem="Ge2-Hc-UPY" secondAttribute="leading" constant="10" id="qwZ-jf-TPb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" red="0.53333333329999999" green="0.74117647060000003" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="Ge2-Hc-UPY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="8tN-mX-3rN"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Ge2-Hc-UPY" secondAttribute="bottom" constant="-8" id="AbJ-Qb-VcP"/>
+                    <constraint firstItem="Ge2-Hc-UPY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="VCg-Wu-7vU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Ge2-Hc-UPY" secondAttribute="trailing" constant="-8" id="iGN-C6-ScY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <color key="backgroundColor" red="0.53333333329999999" green="0.74117647060000003" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="progressView" destination="w6n-2I-5A9" id="gz5-US-Eat"/>
+                <outlet property="userImageView" destination="O2g-LN-asp" id="2sk-e6-nhW"/>
+            </connections>
+            <point key="canvasLocation" x="469" y="368.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Icon-512.png" width="512" height="512"/>
+    </resources>
+</document>

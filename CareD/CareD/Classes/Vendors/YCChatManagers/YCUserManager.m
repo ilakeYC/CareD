@@ -364,6 +364,24 @@
     }];
 }
 
+- (void)resetUserPassword:(NSString *)newPassword oldPassword:(NSString *)oldPassword stateBlock:(void (^)(BOOL))handle {
+    
+    [[AVUser currentUser] updatePassword:oldPassword newPassword:newPassword block:^(id object, NSError *error) {
+        NSLog(@"%@",error);
+        if (error) {
+            
+            handle(NO);
+            
+            
+        } else {
+            
+            handle(YES);
+            
+        }
+    }];
+
+}
+
 - (void)findPasswordByEmail:(NSString *)email {
     [AVUser requestPasswordResetForEmailInBackground:email block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
@@ -442,6 +460,44 @@
 - (void)logOut {
     [AVUser logOut];
 }
+
+
+#pragma mark - 用户位置
+- (void)setUserLocation:(userLocationModel *)locationModel {
+    
+//    NSString *city = locationModel.city;
+//    NSString *area = locationModel.area;
+//    NSNumber *longtitude = locationModel.longtitudeNumber;
+//    NSNumber *latitude   = locationModel.latitudeNumber;
+    AVUser *currentUser = [AVUser currentUser];
+    NSDictionary *locationDic = @{
+                                  CareD_Lake_UserLocationModel_Key_Area:locationModel.area,
+                                  CareD_Lake_UserLocationModel_Key_City:locationModel.city,
+                                  CareD_Lake_UserLocationModel_Key_Latitude:locationModel.latitudeNumber,
+                                  CareD_Lake_UserLocationModel_Key_Longtitude:locationModel.longtitudeNumber
+                                  
+                                  
+                                  };
+    [currentUser setObject:locationDic forKey:CARED_LEANCLOUD_USER_location];
+    [currentUser saveInBackground];
+    
+}
+- (userLocationModel *)getLocationByUser:(AVUser *)user {
+    
+    NSDictionary *locationDic = user[CARED_LEANCLOUD_USER_location];
+    
+    NSNumber *longtitudeN = locationDic[CareD_Lake_UserLocationModel_Key_Longtitude];
+    NSNumber *latitudeN = locationDic[CareD_Lake_UserLocationModel_Key_Latitude];
+    
+    userLocationModel *location = [[userLocationModel alloc] initWithUserLongtitude:[longtitudeN doubleValue] latitude:[latitudeN doubleValue] city:locationDic[CareD_Lake_UserLocationModel_Key_City] area:locationDic[CareD_Lake_UserLocationModel_Key_Area]];
+    
+    return location;
+}
+
+
+
+
+
 
 ///代理对象集合懒加载
 - (NSMutableSet *)delegateSet{

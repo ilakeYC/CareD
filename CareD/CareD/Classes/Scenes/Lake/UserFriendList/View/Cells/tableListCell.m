@@ -16,20 +16,42 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 @property (weak, nonatomic) IBOutlet UILabel *mainTitleLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *userLocationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 
 @end
 
 @implementation tableListCell
 
 - (void)setUser:(AVUser *)user {
+    _user = user;
     self.mainTitleLabel.text = user[@"nickName"];
     self.mainImageView.image = [UIImage imageNamed:@"Icon-512"];
+    self.mainImageView.layer.cornerRadius = self.mainImageView.frame.size.height / 2;
     
     [[YCUserImageManager sharedUserImage] getImageWithUser:user handel:^(UIImage *image) {
        
+        
         self.mainImageView.image = image;
         
     }];
+    
+    
+    userLocationModel *location = [[YCUserManager sharedUserManager] getLocationByUser:user];
+    CGFloat distance = [[HYLocationManager sharedHYLocationManager] distanceBetweenOrderByOtherLatitude:location.latitude  longitude:location.longtitude];
+    
+    if (distance < 1000) {
+        
+        self.distanceLabel.text = [NSString stringWithFormat:@"大约相距:%.2f米",distance];
+    } else if(distance >= 1000) {
+        
+        self.distanceLabel.text = [NSString stringWithFormat:@"大约相距:%.2f公里",distance / 1000];
+        
+    }
+
+    
+    
+    self.userLocationLabel.text = [NSString stringWithFormat:@"%@,%@",location.city,location.area];
 }
 
 - (void)awakeFromNib {
@@ -42,6 +64,8 @@
     self.mainContentView.layer.cornerRadius = 10;
     self.mainContentView.layer.masksToBounds = YES;
     
+    self.mainImageView.layer.cornerRadius = 5;
+    self.mainImageView.layer.masksToBounds = YES;
     
 }
 

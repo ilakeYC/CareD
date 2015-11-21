@@ -1,8 +1,0 @@
-#include "ZBarSDK.xcconfig"
-EXCLUDED_SOURCE_FILE_NAMES[sdk=iphoneos*][arch=*] = ${ZBARSDK_EXCLUDED_SOURCE_FILE_NAMES}
-EXCLUDED_SOURCE_FILE_NAMES[sdk=iphonesimulator*][arch=*] = ${ZBARSDK_EXCLUDED_SOURCE_FILE_NAMES}
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1 ${ZBARSDK_GCC_PREPROCESSOR_DEFINITIONS}
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/ZBarSDK" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AVOSCloud" "${PODS_ROOT}/Headers/Public/AVOSCloudIM" "${PODS_ROOT}/Headers/Public/RongCloudIMKit" "${PODS_ROOT}/Headers/Public/RongCloudIMKit/RongIMKit" "${PODS_ROOT}/Headers/Public/RongCloudIMKit/RongIMLib" "${PODS_ROOT}/Headers/Public/ZBarSDK" "${PODS_ROOT}/Headers/Public/libqrencode"
-OTHER_LDFLAGS = ${ZBARSDK_OTHER_LDFLAGS}
-PODS_ROOT = ${SRCROOT}
-SKIP_INSTALL = YES

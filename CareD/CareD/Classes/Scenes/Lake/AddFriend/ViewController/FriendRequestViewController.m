@@ -70,11 +70,14 @@
             
             self.alertController = [UIAlertController alertControllerWithTitle:@"添加成功" message:@"等待对方应答" preferredStyle:(UIAlertControllerStyleAlert)];
             [self.alertController addAction:[UIAlertAction actionWithTitle:@"好的" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-                
+                [[NSNotificationCenter defaultCenter] removeObserver:self.friendRequestView name:UIKeyboardWillHideNotification object:nil];
+                [[NSNotificationCenter defaultCenter] removeObserver:self.friendRequestView name:UIKeyboardWillShowNotification object:nil];
                 [self.navigationController popViewControllerAnimated:YES];
                 
             }]];
-            [self showViewController:self.alertController sender:nil];
+            [self presentViewController:self.alertController animated:YES completion:^{
+                
+            }];
             
         } else {
             
@@ -85,11 +88,14 @@
                 
                 self.alertController = [UIAlertController alertControllerWithTitle:@"添加好友失败" message:@"您尝试密码次数过多，我们做为拒绝处理请求" preferredStyle:(UIAlertControllerStyleAlert)];
                 [self.alertController addAction:[UIAlertAction actionWithTitle:@"好的" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-                    
+                    [[NSNotificationCenter defaultCenter] removeObserver:self.friendRequestView name:UIKeyboardWillHideNotification object:nil];
+                    [[NSNotificationCenter defaultCenter] removeObserver:self.friendRequestView name:UIKeyboardWillShowNotification object:nil];
                     [self.navigationController popViewControllerAnimated:YES];
                     
                 }]];
-                [self showViewController:self.alertController sender:nil];
+                [self presentViewController:self.alertController animated:YES completion:^{
+                    
+                }];
                 _count ++;
                 
             } else {
@@ -106,6 +112,8 @@
 }
 
 - (void)backToLastVC {
+    [[NSNotificationCenter defaultCenter] removeObserver:self.friendRequestView name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self.friendRequestView name:UIKeyboardWillShowNotification object:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

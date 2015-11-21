@@ -81,6 +81,7 @@
 
 // clear the internal result cache
 - (void) flushCache;
+- (BOOL)returnStart;
 
 // compensate for device/camera/interface orientation
 - (void) willRotateToInterfaceOrientation: (UIInterfaceOrientation) orient

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -22,10 +22,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="289" height="363"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8f-x5-q48">
-                                        <rect key="frame" x="0.0" y="0.0" width="289" height="224.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="289" height="225"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="221-02-V0l">
-                                                <rect key="frame" x="0.0" y="-33" width="289" height="289.5"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-512.png" translatesAutoresizingMaskIntoConstraints="NO" id="221-02-V0l">
+                                                <rect key="frame" x="0.0" y="-33" width="289" height="290"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="221-02-V0l" secondAttribute="height" id="whQ-nY-mc6"/>
@@ -41,12 +41,12 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OV2-Yo-7QM">
-                                        <rect key="frame" x="0.0" y="224" width="289" height="138.5"/>
+                                        <rect key="frame" x="0.0" y="225" width="289" height="138"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xav-9d-XzH">
-                                                <rect key="frame" x="0.0" y="0.0" width="289" height="138.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="289" height="138"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="阿列克谢马克西莫维奇彼什科夫" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKR-pJ-4nU">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKR-pJ-4nU">
                                                         <rect key="frame" x="8" y="8" width="273" height="29"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-UltraLightItalic" family="Avenir Next" pointSize="21"/>
@@ -60,31 +60,38 @@
                                                             <constraint firstAttribute="height" constant="1" id="LqT-HQ-jj0"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京市 海淀区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L91-L9-pSS">
-                                                        <rect key="frame" x="20" y="46" width="249" height="19.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无法获得用户位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L91-L9-pSS">
+                                                        <rect key="frame" x="20" y="46" width="249" height="20"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="14"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天气：多云" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-8V-UrL">
-                                                        <rect key="frame" x="20" y="65" width="249" height="19.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTx-8V-UrL">
+                                                        <rect key="frame" x="20" y="66" width="249" height="0.0"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="14"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="温度：4℃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgk-7f-EoS">
-                                                        <rect key="frame" x="20" y="84.5" width="249" height="19.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgk-7f-EoS">
+                                                        <rect key="frame" x="20" y="66" width="249" height="0.0"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="14"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="空气质量：差" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZE-DV-S9I">
-                                                        <rect key="frame" x="20" y="104" width="249" height="19.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZE-DV-S9I">
+                                                        <rect key="frame" x="20" y="66" width="249" height="0.0"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="14"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无法计算距离" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oV-6u-Izg">
+                                                        <rect key="frame" x="203" y="116" width="84" height="20"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-UltraLightItalic" family="Avenir Next" pointSize="14"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -104,10 +111,12 @@
                                                     <constraint firstItem="Tgk-7f-EoS" firstAttribute="centerX" secondItem="Xav-9d-XzH" secondAttribute="centerX" id="PGD-QI-T5H"/>
                                                     <constraint firstItem="L91-L9-pSS" firstAttribute="leading" secondItem="e6x-ti-q0g" secondAttribute="leading" id="R8g-Z1-ZQI"/>
                                                     <constraint firstItem="L91-L9-pSS" firstAttribute="trailing" secondItem="e6x-ti-q0g" secondAttribute="trailing" id="Yia-Tx-p4J"/>
+                                                    <constraint firstAttribute="trailing" secondItem="5oV-6u-Izg" secondAttribute="trailing" constant="2" id="bva-hu-F87"/>
                                                     <constraint firstItem="Tgk-7f-EoS" firstAttribute="width" secondItem="uTx-8V-UrL" secondAttribute="width" id="eUq-iI-smY"/>
                                                     <constraint firstItem="e6x-ti-q0g" firstAttribute="leading" secondItem="Xav-9d-XzH" secondAttribute="leading" constant="20" id="evN-cH-mvh"/>
                                                     <constraint firstItem="L91-L9-pSS" firstAttribute="top" secondItem="e6x-ti-q0g" secondAttribute="bottom" constant="8" id="jfa-BY-Uxt"/>
                                                     <constraint firstItem="uTx-8V-UrL" firstAttribute="centerX" secondItem="Xav-9d-XzH" secondAttribute="centerX" id="mcx-dt-vgW"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5oV-6u-Izg" secondAttribute="bottom" constant="2" id="mqT-r0-seF"/>
                                                     <constraint firstItem="TKR-pJ-4nU" firstAttribute="leading" secondItem="Xav-9d-XzH" secondAttribute="leading" constant="8" id="q7y-VT-Aks"/>
                                                     <constraint firstItem="e6x-ti-q0g" firstAttribute="top" secondItem="TKR-pJ-4nU" secondAttribute="bottom" id="tMO-9n-vT7"/>
                                                 </constraints>
@@ -159,6 +168,7 @@
                 <constraint firstItem="M6C-2M-MxX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="zqE-ll-C3t"/>
             </constraints>
             <connections>
+                <outlet property="distanceLabel" destination="5oV-6u-Izg" id="mhW-3g-3Sl"/>
                 <outlet property="imageViewContentView" destination="y8f-x5-q48" id="C0n-pz-1o7"/>
                 <outlet property="labelsContentView" destination="OV2-Yo-7QM" id="VjH-d8-NNE"/>
                 <outlet property="mainContentView" destination="WdT-EN-3is" id="2gd-nZ-Iaq"/>
@@ -166,7 +176,7 @@
                 <outlet property="shadowView" destination="M6C-2M-MxX" id="CYn-Q4-OGz"/>
                 <outlet property="userAirLabel" destination="0ZE-DV-S9I" id="C0M-YN-dcu"/>
                 <outlet property="userImageView" destination="221-02-V0l" id="6Wk-lJ-Wwd"/>
-                <outlet property="userLocationLabel" destination="L91-L9-pSS" id="WRn-0B-Kq6"/>
+                <outlet property="userLocationLabel" destination="L91-L9-pSS" id="Pi2-NH-Q5w"/>
                 <outlet property="userNickNameLabel" destination="TKR-pJ-4nU" id="3Dh-HR-EFQ"/>
                 <outlet property="userTempLabel" destination="Tgk-7f-EoS" id="PRA-mD-dBx"/>
                 <outlet property="userWeatherLabel" destination="uTx-8V-UrL" id="abs-OB-Cfh"/>
@@ -174,6 +184,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="1.png" width="1024" height="1024"/>
+        <image name="Icon-512.png" width="512" height="512"/>
     </resources>
 </document>

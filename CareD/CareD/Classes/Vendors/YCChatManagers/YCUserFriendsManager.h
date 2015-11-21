@@ -33,6 +33,9 @@
 ///通过用户一级加密用户名搜索联系人
 - (void)searchFriendByUserNameForScan:(NSString *)userNameForScan;
 
+///通过用户二级加密用户名搜索联系人
+- (void)searchFriendByUserNameForChat:(NSString *)userNameForChat result:(void (^)(AVUser *user))handle;
+
 ///向当前用户中添加好友
 - (BOOL)addFriend:(AVUser *)user;
 @end

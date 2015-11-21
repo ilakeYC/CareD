@@ -12,14 +12,14 @@
 #import "YCUserFriendsManager.h"
 
 
-#define YCUserFriendRequest_WantToAddFriend @"djfiasn8345278n34yvn28734ynoowerno3digawekdnashia"
-#define YCUserFriendRequest_FeedBackRequestYES @"asdi2iq287y4onrwocfqi34oru8omciefj3nsnflaih3fa348"
-#define YCUserFriendRequest_FeedBackRequestNO @"28roq84ryoq8ymroq834rq83mytx734ytw837rfmow3478tneort"
+#define YCUserFriendRequest_WantToAddFriend @"djfiasn8345278n34yvn2873"
+#define YCUserFriendRequest_FeedBackRequestYES @"asdi2iq287y4onrwocfqi34"
+#define YCUserFriendRequest_FeedBackRequestNO @"28roq84ryoq8ymroq834r"
 
-#define YCUserFriendRequest_LineBreakingFlag @"82lfsdnfui98fasldm98msdf298fhoifcno3efhxmouhf384yneuhmof"
-#define YCUserFriendRequest_NOPasswordPlaceHolder @"2i3on8hsoeorqnm984fxeuhfnwo38mochroviwg3ufojq384nyfnoxmo"
-#define YCUserFriendRequest_PasswordNO @"8ncroyq3ryoq384ryoqw89ryc3n4o87yomwc4fx3o487ycwoer8mfxo3"
-#define YCUserFriendRequest_PasswordYES @"2i3noawefweoryq8wenmfxahueorf8wnkrmfhfpxwhe8f834yrox9m83"
+#define YCUserFriendRequest_LineBreakingFlag @"82lfsdnfui98fasldm98msdf29"
+#define YCUserFriendRequest_NOPasswordPlaceHolder @"2i3on8hsoeorqnm984fxeuhfnwo"
+#define YCUserFriendRequest_PasswordNO @"8ncroyq3ryoq384ryoqw89ryc3n"
+#define YCUserFriendRequest_PasswordYES @"2i3noawefweoryq8wenmfxa"
 
 #define YCUserFriendRequest__SenderID_KEY @"senderID"
 #define YCUserFriendRequest__ReceiverID_KEY @"receiverID"
@@ -33,6 +33,8 @@
 @property (nonatomic,strong) AVIMClient *client;
 @property (nonatomic,strong) AVIMClient *clientReceived;
 
+@property (nonatomic,strong) NSMutableDictionary *conversationIDDIC;
+
 ///开始接受好友请求
 - (void)startReceiveingFriendRequest;
 @end
@@ -43,16 +45,27 @@
     
     static YCUserFriendRequestManager *manager = nil;
     static dispatch_once_t onceToken;
+   
     dispatch_once(&onceToken, ^{
         manager = [self new];
+        manager.conversationIDDIC = [NSMutableDictionary dictionary];
         [manager startReceiveingFriendRequest];
+
+        [NSTimer scheduledTimerWithTimeInterval:60 target:manager selector:@selector(startReceiveingFriendRequest) userInfo:nil repeats:YES];
+        
     });
+    
     
     return manager;
 }
 
+
+
 - (void)startReceiveingFriendRequest {
     AVUser *user = [AVUser currentUser];
+    if (!user) {
+        return;
+    }
     NSString *userNameForChat = user[CARED_LEANCLOUD_USER_userNameForChat];
     
     self.clientReceived = [[AVIMClient alloc] init];
@@ -60,9 +73,9 @@
     [self.clientReceived openWithClientId:userNameForChat callback:^(BOOL succeeded, NSError *error) {
         
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestStartReceivingRequest)]) {
-            [self.delegate userFriendRequestStartReceivingRequest];
-        }
+//        if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestStartReceivingRequest)]) {
+//            [self.delegate userFriendRequestStartReceivingRequest];
+//        }
     }];
 }
 
@@ -142,16 +155,23 @@
         
         AVUser *senderUser = [objects firstObject];
         
+        if (!senderUser.username) {
+            return;
+        }
         
         [self.requestListDic setObject:password forKey:senderUser.username];
         
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"收到请求" object:nil]];
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestReceivedRequestFrom:password:)]) {
-            
-            [self.delegate userFriendRequestReceivedRequestFrom:senderUser password:password];
-            
-        }
+        NSString *nickName = senderUser[@"nickName"];
+        
+        [[UnreadTipView prepareNotifaction] setTipsText:[NSString stringWithFormat:@"%@ 请求添加你为好友",nickName]];
+        
+//        if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestReceivedRequestFrom:password:)]) {
+//            
+//            [self.delegate userFriendRequestReceivedRequestFrom:senderUser password:password];
+//            
+//        }
         
     }];
 }
@@ -204,24 +224,69 @@
 }
 ////将密码合成用户好友请求并发送给某个用户
 - (void)sendFriendRequestToUser:(AVUser *)user withPassword:(NSString *)password {
+//    if ([_lastUser.username isEqualToString:user.username]) {
+//        return;
+//    }
+    
     AVUser *currentUser = [AVUser currentUser];
+    _lastUser = user;
     NSString *senderUserNameForChat = currentUser[CARED_LEANCLOUD_USER_userNameForChat];
     NSString *receiverUserNameForChat = user[CARED_LEANCLOUD_USER_userNameForChat];
     
     NSString *requestMessage = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@",senderUserNameForChat,YCUserFriendRequest_LineBreakingFlag,receiverUserNameForChat,YCUserFriendRequest_LineBreakingFlag,YCUserFriendRequest_WantToAddFriend,YCUserFriendRequest_LineBreakingFlag,YCUserFriendRequest_PasswordYES,YCUserFriendRequest_LineBreakingFlag,password];
-    
+    self.client = nil;
     self.client = [[AVIMClient alloc] init];
+    
+    
     [self.client openWithClientId:senderUserNameForChat callback:^(BOOL succeeded, NSError *error) {
-        [self.client createConversationWithName:@"friendRequest" clientIds:@[receiverUserNameForChat] callback:^(AVIMConversation *conversation, NSError *error) {
+        if (succeeded) {
+            NSLog(@"!!!!!!!!!!!!!!!!!!!!!openWithClientId = %d", succeeded);
+        }
+        
+        if (self.conversationIDDIC[senderUserNameForChat]) {
+        }
+        
+        NSLog(@"receiverUserNameForChat = %@", receiverUserNameForChat);
+        NSLog(@"receive Last = %@,%@,%f",user.username,currentUser.username,[NSDate timeIntervalSinceReferenceDate]);
+        
+        [self.client createConversationWithName:[NSString stringWithFormat:@"%@,%@,%f",user.username,currentUser.username,[NSDate timeIntervalSinceReferenceDate]] clientIds:@[receiverUserNameForChat] callback:^(AVIMConversation *conversation, NSError *error) {
+            NSLog(@"%@",conversation);
+//            [conversation sendMessage:[AVIMMessage messageWithContent:requestMessage] options:(AVIMMessageSendOptionNone) callback:^(BOOL succeeded, NSError *error) {
+//                NSLog(@"%@",error);
+//                if (succeeded) {
+//                    
+//                    
+//                    
+//                    if (succeeded) {
+//                        NSLog(@"!!!!!!!!!!!!!!!!!!!!!sendMessage = %d", succeeded);
+//                    }
+//                    
+//                    //                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestSendingRequestSuccessedToUser:andPassword:)]) {
+//                    //                        [self.delegate userFriendRequestSendingRequestSuccessedToUser:user andPassword:password];
+//                    //                    }
+//                } else {
+//                    //                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestSendingRequestFailureToUser:andPassword:)]) {
+//                    //                        [self.delegate userFriendRequestSendingRequestFailureToUser:user andPassword:password];
+//                    //                    }
+//                }
+//            }];
+//
             [conversation sendMessage:[AVIMTextMessage messageWithText:requestMessage attributes:nil] callback:^(BOOL succeeded, NSError *error) {
+                
+                
                 if (succeeded) {
-                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestSendingRequestSuccessedToUser:andPassword:)]) {
-                        [self.delegate userFriendRequestSendingRequestSuccessedToUser:user andPassword:password];
+                    
+                    if (succeeded) {
+                        NSLog(@"!!!!!!!!!!!!!!!!!!!!!sendMessage = %d", succeeded);
                     }
+                    
+//                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestSendingRequestSuccessedToUser:andPassword:)]) {
+//                        [self.delegate userFriendRequestSendingRequestSuccessedToUser:user andPassword:password];
+//                    }
                 } else {
-                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestSendingRequestFailureToUser:andPassword:)]) {
-                        [self.delegate userFriendRequestSendingRequestFailureToUser:user andPassword:password];
-                    }
+//                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestSendingRequestFailureToUser:andPassword:)]) {
+//                        [self.delegate userFriendRequestSendingRequestFailureToUser:user andPassword:password];
+//                    }
                 }
             }];
         }];
@@ -242,15 +307,15 @@
             [conversation sendMessage:[AVIMTextMessage messageWithText:requestMessage attributes:nil] callback:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
                     [[YCUserFriendsManager sharedFriendsManager] addFriend:user];
-                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestFeedBackYESTOUserSucceed:)]) {
-                        [self.delegate userFriendRequestFeedBackYESTOUserSucceed:user];
-                    }
+//                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestFeedBackYESTOUserSucceed:)]) {
+//                        [self.delegate userFriendRequestFeedBackYESTOUserSucceed:user];
+//                    }
                     
                 } else {
                     
-                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestFeedBackYESTOUserFailure:)]) {
-                        [self.delegate userFriendRequestFeedBackYESTOUserFailure:user];
-                    }
+//                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestFeedBackYESTOUserFailure:)]) {
+//                        [self.delegate userFriendRequestFeedBackYESTOUserFailure:user];
+//                    }
                     
                 }
             }];
@@ -273,15 +338,15 @@
             [conversation sendMessage:[AVIMTextMessage messageWithText:requestMessage attributes:nil] callback:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
                     
-                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestFeedBackNOTOUserSucceed:)]) {
-                        [self.delegate userFriendRequestFeedBackYESTOUserSucceed:user];
-                    }
+//                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestFeedBackNOTOUserSucceed:)]) {
+//                        [self.delegate userFriendRequestFeedBackYESTOUserSucceed:user];
+//                    }
                     
                 } else {
-                    
-                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestFeedBackNOTOUserFailure:)]) {
-                        [self.delegate userFriendRequestFeedBackYESTOUserFailure:user];
-                    }
+//                    
+//                    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendRequestFeedBackNOTOUserFailure:)]) {
+//                        [self.delegate userFriendRequestFeedBackYESTOUserFailure:user];
+//                    }
                     
                 }
             }];

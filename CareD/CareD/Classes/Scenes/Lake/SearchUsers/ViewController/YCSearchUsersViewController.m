@@ -10,11 +10,13 @@
 #import "YCSearchUsersView.h"
 #import "YCSearchUserCell.h"
 
-@interface YCSearchUsersViewController ()<UISearchBarDelegate,YCUserFriendsManagerDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface YCSearchUsersViewController ()<UISearchBarDelegate,YCUserFriendsManagerDelegate,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 {
     NSArray *_resultArray;
 }
 @property (nonatomic,strong) YCSearchUsersView *searchUsersView;
+
+@property (nonatomic,strong) UIActivityIndicatorView *juhua;
 
 @end
 
@@ -28,9 +30,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIView *juhuaView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    self.juhua = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:(UIActivityIndicatorViewStyleWhite)];
+    self.juhua.hidesWhenStopped = YES;
+    self.juhua.center = juhuaView.center;
+    [self.juhua stopAnimating];
+    [juhuaView addSubview:self.juhua];
+    
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:juhuaView];
+    
     self.navigationItem.titleView = self.searchUsersView.searchBar;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:(UIBarButtonItemStylePlain) target:self action:@selector(backToLastVC)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    
+    
     
     self.searchUsersView.tableView.delegate = self;
     self.searchUsersView.tableView.dataSource = self;
@@ -71,11 +85,12 @@
     [self.searchUsersView.searchBar resignFirstResponder];
     if ([[YCUserFriendsManager sharedFriendsManager] userIsFriend:_resultArray[indexPath.row]]) {
         
+        HYFriendInfoViewController *friendInfoVC = [HYFriendInfoViewController new];
+        friendInfoVC.user = cell.user;
+        [self.navigationController pushViewController:friendInfoVC animated:YES];
         //是好友时候页面
         
     } else {
-        
-        
         
         AddFriendViewController *addFriendVC = [AddFriendViewController new];
         addFriendVC.image = cell.image;
@@ -95,12 +110,18 @@
         return;
     }
     [[YCUserFriendsManager sharedFriendsManager] searchFriendByNickName:searchText];
+    [self.juhua startAnimating];
 }
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [searchBar resignFirstResponder];
+    
+}// called when keyboard search button pressed
 
 #pragma mark - YCUserFriendManager Delegate 
 - (void)userFriendsManagerFriendSearchByNickName:(NSString *)nickName complete:(NSArray *)friendList {
     _resultArray = friendList;
-    
+    [self.juhua stopAnimating];
     if (_resultArray.count == 0) {
         [self.searchUsersView showTipsLabel];
     } else {

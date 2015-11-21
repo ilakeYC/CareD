@@ -21,6 +21,27 @@
     ///警告用红色
 #define CareD_Lake_COLOR_WorningRed [UIColor colorWithRed:210/255.f green:15/255.f blue:15/255.f alpha:1]
 
+///用户地区字典模型用
+#define CareD_Lake_UserLocationModel_Key_City       @"city"
+#define CareD_Lake_UserLocationModel_Key_Area       @"area"
+#define CareD_Lake_UserLocationModel_Key_Longtitude @"longtitute"
+#define CareD_Lake_UserLocationModel_Key_Latitude   @"latitude"
+
+#define CareD_Lake_UserDefaults_CurrentUserWeather_Key @"currentUserWeather"
+#define CareD_Lake_UserDefaults_CurrentUserWeather_DIC_Temp_KEY @"temp"
+#define CareD_Lake_UserDefaults_CurrentUserWeather_DIC_Weather_KEY @"weather"
+#define CareD_Lake_UserDefaults_CurrentUserWeather_DIC_TempWeather_KEY @"tempWeather"
+#define CareD_Lake_UserDefaults_CurrentUserWeather_DIC_Air_KEY @"air"
+#define CareD_Lake_UserDefaults_CurrentUserWeather_DIC_Life_KEY @"life"
+#define CareD_Lake_UserDefaults_CurrentUserWeather_DIC_City_KEY @"city"
+#define CareD_Lake_UserDefaults_CurrentUserWeather_DIC_Area_KEY @"area"
+//@property (nonatomic, copy) NSString *temp;
+//@property (nonatomic, copy) NSString *weather;
+//@property (nonatomic, copy) NSString *tempWeather;
+//@property (nonatomic, copy) NSString *air;
+//@property (nonatomic, copy) NSString *life;
+//@property (nonatomic, copy) NSString *city;
+//@property (nonatomic, copy) NSString *area;
 
 
 /////////////////////////头文件
@@ -35,16 +56,17 @@
 #import "YCSearchUsersViewController.h"     //- 查找联系人_视图控制器
 #import "AddFriendViewController.h"         //- 添加好友发送密码时_控制器
 #import "FriendRequestViewController.h"     //- 处理好友请求_视图控制器
-#import "FriendRequestsListViewController.h"//- 好友请求列表
+#import "FriendRequestsListViewController.h"//- 好友请求列表_视图控制器
+#import "ScannerAddFriendController.h"      //- 二维码查找好友_视图控制器
+#import "UserSettingsViewController.h"      //- 用户设置_视图控制器
+
+#import "userLocationModel.h"               //- 用户地区模型
 
 
+#import "FindPassowrdViewController.h"      //- 找回密码
 
 
-
-
-
-
-
+#import "AudioToolbox/AudioToolbox.h"
 
 
 #import "YCUsers.h"                 //- 用户层

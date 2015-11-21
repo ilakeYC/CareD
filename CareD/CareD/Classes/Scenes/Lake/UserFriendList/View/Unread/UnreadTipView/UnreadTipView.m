@@ -28,10 +28,17 @@
     }
     return self;
 }
++ (instancetype)prepareNotifaction {
+    static UnreadTipView *view = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        view = [self new];
+    });
+    return view;
+}
 
 - (void)setUserNickName:(NSString *)userNickName {
     _userNickName = userNickName;
-    
     
     self.window = [[UIWindow alloc] initWithFrame: CGRectMake(0, -20, CareD_Lake_MainScreenBounds.size.width, 20)];
     self.window.windowLevel = UIWindowLevelAlert + 1;
@@ -50,6 +57,27 @@
     self.label.text = [NSString stringWithFormat:@"CareD 提示：好友 %@ 发来一条信息",userNickName];
     [self show];
 }
+
+- (void)setTipsText:(NSString *)tipsText {
+    
+    self.window = [[UIWindow alloc] initWithFrame: CGRectMake(0, -20, CareD_Lake_MainScreenBounds.size.width, 20)];
+    self.window.windowLevel = UIWindowLevelAlert + 1;
+    [self.window makeKeyAndVisible];
+    
+    
+    self.label.frame = self.window.bounds;
+    self.label.font = [UIFont systemFontOfSize:12];
+    self.label.textColor = [UIColor whiteColor];
+    self.label.textAlignment = NSTextAlignmentCenter;
+    self.window.backgroundColor = CareD_Lake_COLOR_AbsintheGreen;
+    [self.window addSubview:self.label];
+    
+    
+    
+    self.label.text = tipsText;
+    [self show];
+}
+
 - (void)show {
     _timerCount = 0;
     [UIView animateWithDuration:0.3 animations:^{

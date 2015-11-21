@@ -21,7 +21,9 @@ typedef NS_ENUM(NSInteger, YCUserFriendRequest) {
 @protocol YCUserFriendRequestManagerDelegate;
 
 @interface YCUserFriendRequestManager : NSObject
-
+{
+    AVUser *_lastUser;
+}
 @property (nonatomic,assign) id<YCUserFriendRequestManagerDelegate> delegate;
 
 
@@ -43,7 +45,6 @@ typedef NS_ENUM(NSInteger, YCUserFriendRequest) {
 @end
 
 @protocol YCUserFriendRequestManagerDelegate <NSObject>
-
 @optional
 
 ///开始接收好友请求

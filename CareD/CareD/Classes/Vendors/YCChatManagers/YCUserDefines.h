@@ -16,5 +16,6 @@
 #define CARED_LEANCLOUD_USER_userNameForScan @"userNameForScan"
 #define CARED_LEANCLOUD_USER_userNameForChat @"userNameForChat"
 #define CARED_LEANCLOUD_USER_friendList      @"friends"
+#define CARED_LEANCLOUD_USER_location        @"location"
 
 #endif /* YCUserDefines_h */

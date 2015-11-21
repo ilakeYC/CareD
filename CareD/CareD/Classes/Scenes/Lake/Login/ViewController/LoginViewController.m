@@ -30,7 +30,7 @@
     self.userManager = [YCUserManager sharedUserManager];
     [self.userManager addDelegate:self];
     
-    
+    [self.loginView.findPasswordButton addTarget:self action:@selector(findPasswordButtonAction) forControlEvents:(UIControlEventTouchUpInside)];
     
     [self.loginView.registerButton addTarget:self action:@selector(registerButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [self.loginView.loginButton addTarget:self action:@selector(loginButtonAction:) forControlEvents:(UIControlEventTouchUpInside)];
@@ -42,6 +42,14 @@
     [super viewDidAppear:animated];
 #warning remember to open this for login use current user
     [self.userManager logInWithCurrentUserAndReturnToken];
+}
+
+- (void)findPasswordButtonAction {
+    FindPassowrdViewController *find = [FindPassowrdViewController new];
+    UINavigationController *findNC = [[UINavigationController alloc] initWithRootViewController:find];
+    [self presentViewController:findNC animated:YES completion:^{
+        
+    }];
 }
 
 #pragma mark - 登陆按钮点击事件
@@ -79,10 +87,18 @@
 //用户名密码登陆成功返回token
 - (void)userManagerLogInLoginWithUserNameAndPasswordSuccessed:(AVUser *)user token:(NSString *)token {
     NSLog(@"登陆成功.%@",token);
+    // 登陆融云
+    [[RCIM sharedRCIM]connectWithToken:token success:^(NSString *userId) {
+        NSLog(@"融云登陆成功1 = %@",token);
+    } error:^(RCConnectErrorCode status) {
+        
+        NSLog(@"登陆融云失败");
+    } tokenIncorrect:^{
+        NSLog(@"token 失效");
+    }];
     [self.loginView unChecking];
     
     [[YCUserImageManager sharedUserImage] getCurrentUserImage];
-    
     [self presentFriendListViewController];
 }
 //登陆失败
@@ -102,6 +118,17 @@
     [self.loginView unChecking];
     NSLog(@"%@",token);
     NSLog(@"用户登陆成功");
+    
+#warning mark 重新连接(原因进入后台掉线？？)
+    [[RCIM sharedRCIM]connectWithToken:token success:^(NSString *userId) {
+        NSLog(@"融云登陆成功1 = %@",token);
+    } error:^(RCConnectErrorCode status) {
+        
+        NSLog(@"登陆融云失败");
+    } tokenIncorrect:^{
+        NSLog(@"token 失效");
+    }];
+    
     [self presentFriendListViewController];
 }
 //

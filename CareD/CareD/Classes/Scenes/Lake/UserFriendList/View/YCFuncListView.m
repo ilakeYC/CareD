@@ -19,6 +19,9 @@
 
 @property (nonatomic,strong) UIButton *searchFriendsButton;
 @property (nonatomic,strong) UIButton *scanButton;
+@property (nonatomic,strong) UIButton *refreshButton;
+@property (nonatomic,strong) UIButton *twoCodeButton;
+
 @end
 
 @implementation YCFuncListView
@@ -123,8 +126,53 @@
     
     
     
+    UIView *twoCodeView = [[UIView alloc] initWithFrame:CGRectMake(49, 226, 39, 53)];
+    [self.effectView addSubview:twoCodeView];
+    
+    self.twoCodeButton = [UIButton buttonWithType:(UIButtonTypeSystem)];
+    [self.twoCodeButton setImage:[UIImage imageNamed:@"twoCode"] forState:(UIControlStateNormal)];
+    [self.twoCodeButton setTintColor:[UIColor whiteColor]];
+    self.twoCodeButton.frame = self.searchFriendsButton.bounds;
+    [self.twoCodeButton addTarget:self action:@selector(buttonAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [twoCodeView addSubview:self.twoCodeButton];
+    
+    UILabel *twoCodeLabel = [[UILabel alloc] initWithFrame:searchFriendsLabel.frame];
+    twoCodeLabel.font = [UIFont systemFontOfSize:7];
+    twoCodeLabel.textColor = [UIColor whiteColor];
+    twoCodeLabel.textAlignment = NSTextAlignmentCenter;
+    twoCodeLabel.text = @"二维码";
+    [twoCodeView addSubview:twoCodeLabel];
+
+    
+    
+    UIView *refreshView = [[UIView alloc] initWithFrame:CGRectMake(49, 319, 39, 53)];
+    [self.effectView addSubview:refreshView];
+    
+    self.refreshButton = [UIButton buttonWithType:(UIButtonTypeSystem)];
+    [self.refreshButton setImage:[UIImage imageNamed:@"refreshButton"] forState:(UIControlStateNormal)];
+    [self.refreshButton setTintColor:[UIColor whiteColor]];
+    self.refreshButton.frame = self.searchFriendsButton.bounds;
+    [self.refreshButton addTarget:self action:@selector(buttonAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [refreshView addSubview:self.refreshButton];
+    
+    UILabel *refreshLabel = [[UILabel alloc] initWithFrame:searchFriendsLabel.frame];
+    refreshLabel.font = [UIFont systemFontOfSize:7];
+    refreshLabel.textColor = [UIColor whiteColor];
+    refreshLabel.textAlignment = NSTextAlignmentCenter;
+    refreshLabel.text = @"刷新好友";
+    [refreshView addSubview:refreshLabel];
+    
+    
+    
+    
+    
+    
+    
+    
     [UIView animateWithDuration:0.1 animations:^{
+        
         searchFriendsView.frame = CGRectMake(5, 40, 39, 53);
+        
     } completion:^(BOOL finished) {
         if (finished) {
             
@@ -134,6 +182,22 @@
             } completion:^(BOOL finished) {
                 
                 if (finished) {
+                    
+                    [UIView animateWithDuration:0.1 animations:^{
+                        
+                        twoCodeView.frame = CGRectMake(5, 226, 39, 53);
+                        
+                    } completion:^(BOOL finished) {
+                        if (finished) {
+                            [UIView animateWithDuration:0.1 animations:^{
+                               
+                                refreshView.frame = CGRectMake(5, 319, 39, 53);
+                                
+                            } completion:^(BOOL finished) {
+                                
+                            }];
+                        }
+                    }];
                     
                 }
                 
@@ -150,6 +214,10 @@
         [self touchedButtonAtIndex:0];
     } else if (sender == self.scanButton) {
         [self touchedButtonAtIndex:1];
+    } else if (sender == self.twoCodeButton) {
+        [self touchedButtonAtIndex:2];
+    } else if (sender == self.refreshButton) {
+        [self touchedButtonAtIndex:3];
     }
     [self hiddenButtonList];
 }

@@ -76,10 +76,20 @@
         [[YCUserFriendRequestManager sharedUserFriendRequestManager] sendFriendRequestToUser:_user withPassword:password];
         [YCUserFriendRequestManager sharedUserFriendRequestManager].delegate = self;
         self.addFriendView.sendRequestButton.enabled = NO;
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"发送成功" message:@"请耐心等待对方处理" preferredStyle:(UIAlertControllerStyleAlert)];
+        [alert addAction:[UIAlertAction actionWithTitle:@"好的" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+            [self backToLastVC];
+        }]];
+        [self presentViewController:alert animated:YES completion:^{
+            
+        }];
     }
 }
 
 - (void)backToLastVC {
+    [[NSNotificationCenter defaultCenter] removeObserver:self.addFriendView name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self.addFriendView name:UIKeyboardWillHideNotification object:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

@@ -54,7 +54,7 @@
     [self.contentView addSubview:self.button];
     
     self.numberLabel = [[UILabel alloc] initWithFrame:self.button.bounds];
-    self.numberLabel.text = @"3";
+    self.numberLabel.text = @"0";
     self.numberLabel.adjustsFontSizeToFitWidth = YES;
     self.numberLabel.font = [UIFont systemFontOfSize:22];
     self.numberLabel.textColor = [UIColor whiteColor];
@@ -64,50 +64,49 @@
     [self.button addSubview:self.numberLabel];
     
     self.label = [[UILabel alloc] initWithFrame:CGRectMake(self.button.frame.size.width + self.button.frame.origin.x, self.button.frame.origin.y, self.contentView.frame.size.width - self.button.frame.size.width - self.button.frame.origin.x, self.button.frame.size.height)];
-    self.label.text = @"3位好友信息未读";
+    self.label.text = @"无未读消息";
     self.label.adjustsFontSizeToFitWidth = YES;
     self.label.textColor = [UIColor lightGrayColor];
     self.label.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:self.label];
-
-
-    [self hidden];
+    
+    
+    //    [self hidden];
 }
 
 - (void)setNumberOfUnread:(NSInteger)numberOfUnread {
     _numberOfUnread = numberOfUnread;
     
-    if (numberOfUnread == 0) {
-        if (_isShow) {
-            [self hidden];
-        }
-        return;
-    }
     
+    NSString *string = [NSString stringWithFormat:@"%ld",numberOfUnread];
+    NSString *string1 = [NSString stringWithFormat:@"好友消息未读"];
+    
+    _numberLabel.text = string;
+    _label.text = string1;
     if (!_isShow) {
         [self show];
     }
-    self.numberLabel.text = [NSString stringWithFormat:@"%ld",numberOfUnread];
-    self.label.text = [NSString stringWithFormat:@"%ld位好友信息未读",numberOfUnread];
     
 }
 
 
 - (void)show {
     self.contentView.alpha = 1;
+    self.hidden = NO;
     self.button.backgroundColor = [UIColor whiteColor];
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:1];
     [UIView setAnimationRepeatCount:INT64_MAX];
     [UIView setAnimationRepeatAutoreverses:YES];
     self.button.backgroundColor = [UIColor orangeColor];
-    //    self.button.alpha = 0.5;
+    //        self.button.alpha = 0.5;
     [UIView commitAnimations];
     _isShow = YES;
 }
 - (void)hidden {
     [UIView animateWithDuration:1 animations:^{
         self.contentView.alpha = 0;
+        self.hidden = YES;
     }];
     _isShow = NO;
 }

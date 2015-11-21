@@ -63,6 +63,7 @@ typedef NS_ENUM(NSUInteger, YCUserManagerRegisterError) {
 
 ///通过旧密码更改密码
 - (void)resetUserPassword:(NSString *)newPassword oldPassword:(NSString *)oldPassword;
+- (void)resetUserPassword:(NSString *)newPassword oldPassword:(NSString *)oldPassword stateBlock:(void(^)(BOOL succeed))handle;
 ///通过邮箱找回密码
 - (void)findPasswordByEmail:(NSString *)email;
 ///发送邮箱验证
@@ -70,6 +71,16 @@ typedef NS_ENUM(NSUInteger, YCUserManagerRegisterError) {
 
 ///注销登录
 - (void)logOut;
+
+///设置用户位置
+- (void)setUserLocation:(userLocationModel *)locationModel;
+
+///得到用户位置
+- (userLocationModel *)getLocationByUser:(AVUser *)user;
+
+
+///加密
+- (NSString *)stringByEncryptionFromString:(NSString *)string;
 
 
 @end

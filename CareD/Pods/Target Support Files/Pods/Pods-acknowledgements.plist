@@ -14,6 +14,15 @@
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>Copyright &#169; 2014 AutoNavi. All Rights Reserved.
+</string>
+			<key>Title</key>
+			<string>AMap2DMap</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>Copyright 2015 LeanCloud, Inc. See https://leancloud.cn/terms.html</string>
 			<key>Title</key>
 			<string>AVOSCloud</string>

@@ -195,6 +195,12 @@
     [super dealloc];
 }
 
+
+- (BOOL)returnStart{
+    return started;
+    
+}
+
 - (void) resetTracking
 {
     [tracking removeAllAnimations];

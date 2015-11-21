@@ -138,6 +138,7 @@
         
     }];
     
+    
     _keyboardUP = YES;
 }
 - (void)viewDown {
@@ -152,6 +153,7 @@
         self.requestLabelShadowView.frame = frame;
         
     }];
+    
     _keyboardUP = NO;
 }
 

@@ -225,6 +225,16 @@
     NSLog(@"注册成功%@",token);
     [self unChecking];
     
+// 登陆融云
+    [[RCIM sharedRCIM]connectWithToken:token success:^(NSString *userId) {
+        NSLog(@"融云登陆成功1 = %@",token);
+    } error:^(RCConnectErrorCode status) {
+        
+        NSLog(@"登陆融云失败");
+    } tokenIncorrect:^{
+        NSLog(@"token 失效");
+    }];
+    
     
     [self showViewController:self.alertController sender:self];
 }

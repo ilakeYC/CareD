@@ -125,21 +125,21 @@ static NSInteger const userInfoBarHight = 49;
     self.airLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.dateLabel.frame.size.height, self.dateLabel.frame.size.width, self.dateLabel.frame.size.height)];
     self.airLabel.textColor = [UIColor whiteColor];
     self.airLabel.textAlignment = NSTextAlignmentCenter;
-    self.airLabel.text = @"空气质量:良";
+    self.airLabel.text = @"";
     self.airLabel.adjustsFontSizeToFitWidth = YES;
     [self.userInfoBarRightView addSubview:self.airLabel];
     
     self.locationLabel = [[UILabel alloc] initWithFrame:self.dateLabel.bounds];
     self.locationLabel.textColor = [UIColor whiteColor];
     self.locationLabel.textAlignment = NSTextAlignmentCenter;
-    self.locationLabel.text = @"北京市，海淀区";
+    self.locationLabel.text = @"正在获取您的位置";
     self.locationLabel.adjustsFontSizeToFitWidth = YES;
     [self.userInfoBarLeftView addSubview:self.locationLabel];
     
     self.weatherLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.locationLabel.frame.origin.x, self.locationLabel.frame.size.height, self.locationLabel.frame.size.width, self.locationLabel.frame.size.height)];
     self.weatherLabel.textColor = [UIColor whiteColor];
     self.weatherLabel.textAlignment = NSTextAlignmentCenter;
-    self.weatherLabel.text = @"3℃/小雪";
+    self.weatherLabel.text = @"";
     self.weatherLabel.adjustsFontSizeToFitWidth = YES;
     [self.userInfoBarLeftView addSubview:self.weatherLabel];
     

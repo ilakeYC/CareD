@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    application.applicationIconBadgeNumber = 0;
+    
+    [NSThread sleepForTimeInterval:2];
+    
     [self settingLeanCloudAppIDAndAppKey];
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -24,13 +28,86 @@
     _window.backgroundColor = [UIColor whiteColor];
     [_window makeKeyAndVisible];
     
-    
+
+//#warning mark 好友信息
     
     [UINavigationBar appearance].barTintColor = CareD_Lake_COLOR_AbsintheGreen;
     [UINavigationBar appearance].translucent = NO;
+    
+#warning mark 设置导航栏
+    //     设置导航栏字体的颜色
+    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance]setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20]}];
+    
+    
+//    融云设置
+//      初始化融云sdk
+    [[RCIM sharedRCIM] initWithAppKey:@"k51hidwq1bj0b"];
+    /**
+     * 推送处理1
+     */
+    if ([application
+         respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings
+                                                settingsForTypes:(UIUserNotificationTypeBadge |
+                                                                  UIUserNotificationTypeSound |
+                                                                  UIUserNotificationTypeAlert)
+                                                categories:nil];
+        [application registerUserNotificationSettings:settings];
+    } else {
+        UIRemoteNotificationType myTypes = UIRemoteNotificationTypeBadge |
+        UIRemoteNotificationTypeAlert |
+        UIRemoteNotificationTypeSound;
+        [application registerForRemoteNotificationTypes:myTypes];
+    }
+
+    
     return YES;
 }
 
+/**
+ * 推送处理2
+ */
+//注册用户通知设置
+- (void)application:(UIApplication *)application
+didRegisterUserNotificationSettings:
+(UIUserNotificationSettings *)notificationSettings {
+    // register to receive notifications
+    [application registerForRemoteNotifications];
+    
+    
+}
+
+/**
+ * 推送处理3
+ */
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSString *token =
+    [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<"
+                                                           withString:@""]
+      stringByReplacingOccurrencesOfString:@">"
+      withString:@""]
+     stringByReplacingOccurrencesOfString:@" "
+     withString:@""];
+    
+    [[RCIMClient sharedRCIMClient] setDeviceToken:token];
+}
+
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    
+    NSLog(@"收到了推送");
+    [[RCIMClient sharedRCIMClient] recordRemoteNotificationEvent:userInfo];
+}
+
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSLog(@"收到推送");
+    [[RCIMClient sharedRCIMClient] recordRemoteNotificationEvent:userInfo];
+}
 - (void)settingLeanCloudAppIDAndAppKey {
     //设置appkey 和 appid
     NSString *appid = CARED_LEANCLOUD_APPID;
@@ -45,8 +122,8 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+
+
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -58,9 +135,9 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+
+
 }
 
 #pragma mark - Core Data stack

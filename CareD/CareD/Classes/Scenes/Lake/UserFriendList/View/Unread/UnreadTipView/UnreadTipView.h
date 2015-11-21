@@ -10,7 +10,10 @@
 
 @interface UnreadTipView : UIView
 
++ (instancetype)prepareNotifaction;
+
 @property (nonatomic,strong) NSString *userNickName;
+@property (nonatomic,strong) NSString *tipsText;
 
 - (void)show;
 - (void)hidden;

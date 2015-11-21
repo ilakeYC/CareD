@@ -11,9 +11,13 @@
 #import "YCUserDefines.h"
 
 @interface YCUserImageManager ()
-
+{
+    UIImage *_currentUserImageTemp;
+}
 @property (nonatomic,strong) NSMutableDictionary *friendListImageListDictionary;
 @property (nonatomic,strong) NSMutableDictionary *friendListImageUrlListDictionary;
+@property (nonatomic,strong) NSMutableDictionary *userImageUrlUserNamePairs;
+@property (nonatomic,strong) NSMutableDictionary *userImageUserNamePairs;
 
 @property (nonatomic,assign) NSInteger numberOfFriends;
 @end
@@ -90,6 +94,59 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
     }];
 }
 
+- (void)setUserImage:(UIImage *)image completeBlock:(void (^)(BOOL))successed progress:(void (^)(NSInteger))progress {
+    NSString *userName = [AVUser currentUser].username;
+    AVQuery *query = [AVQuery queryWithClassName:USERIMAGE_CLASSNAME];
+    [query whereKey:@"userName" equalTo:userName];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        if (objects.count == 0) {
+            
+        }
+        
+        AVObject *userImage = [objects firstObject];
+        AVFile *oldImageFile = userImage[@"image"];
+        
+        NSData *imageData = UIImagePNGRepresentation(image);
+        AVFile *newImageFile = [AVFile fileWithName:userName data:imageData];
+        [newImageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            
+            if (succeeded) {
+                
+                [userImage setObject:newImageFile forKey:@"image"];
+                
+                [userImage saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    
+                    if (succeeded) {
+                        self.currentUserImage = image;
+                        //                        NSLog(@"%@",oldImageFile);
+#warning - I test to delete ole image to save the spacing of server,if this func is wrong,you coule remove this line down there
+                        [oldImageFile deleteInBackground];
+                        
+                        [self resettedUserImage];
+                        successed(YES);
+                        
+                        
+                    } else {
+                        
+                        successed(NO);
+                        
+                    }
+                    
+                }];
+            } else {
+                
+                successed(NO);
+                
+            }
+        } progressBlock:^(NSInteger percentDone) {
+            
+            progress(percentDone);
+            
+        }];
+    }];
+}
+
 //下载用户头像
 - (void)getCurrentUserImage {
     
@@ -137,8 +194,18 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
 - (void)getImageUrlWithUser:(AVUser *)user handel:(void (^)(NSString *URL))URL {
     
     NSString *userName = user.username;
+    if (!user) {
+        return;
+    }
+#warning ---做了个小优化
+    if (self.userImageUrlUserNamePairs[userName]) {
+        URL(self.userImageUrlUserNamePairs[userName]);
+        return;
+    }
+    
     
     AVQuery *query = [AVQuery queryWithClassName:USERIMAGE_CLASSNAME];
+    
     [query whereKey:@"userName" equalTo:userName];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
@@ -146,7 +213,10 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
         
         AVFile *imageFile = currentImageObject[@"image"];
         NSString *url = imageFile.url;
-        
+        if (url) {
+            
+            [self.userImageUrlUserNamePairs setObject:url forKey:userName];
+        }
         URL(url);
         
     }];
@@ -205,6 +275,17 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
 - (void)getImageWithUser:(AVUser *)user handel:(void (^)(UIImage *))handle {
     
     NSString *userName = user.username;
+    if ([userName isEqualToString:[AVUser currentUser].username]) {
+        if (_currentUserImageTemp) {
+            handle(_currentUserImageTemp);
+            return;
+        }
+    }
+    
+    if (self.userImageUserNamePairs[userName]) {
+        handle(self.userImageUserNamePairs[userName]);
+        return;
+    }
     
     AVQuery *query = [AVQuery queryWithClassName:USERIMAGE_CLASSNAME];
     [query whereKey:@"userName" equalTo:userName];
@@ -217,12 +298,28 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
         
         [imageFile getThumbnail:YES width:100 height:100 withBlock:^(UIImage *image, NSError *error) {
             NSLog(@"\n%d,\n%s\n",__LINE__,__FUNCTION__);
+            _currentUserImage = image;
+            if (image) {
+                
+            [self.userImageUserNamePairs setObject:image forKey:userName];
+            }
             handle(image);
         }];
     }];
 
 }
+- (void)resettedUserImage {
+    _currentUserImageTemp = nil;
+    NSString *userName = [AVUser currentUser].username;
+    if (self.userImageUrlUserNamePairs[userName]) {
+        [self.userImageUrlUserNamePairs removeObjectForKey:userName];
+    }
+    if (self.userImageUserNamePairs[userName]) {
 
+        [self.userImageUserNamePairs removeObjectForKey:userName];
+    }
+    
+}
 
 
 - (void)getCurrentUserFriendImageURL {
@@ -286,4 +383,16 @@ static NSString *const USERIMAGE_CLASSNAME = @"UserImage";
     return _friendListImageUrlListDictionary;
 }
 
+- (NSMutableDictionary *)userImageUrlUserNamePairs {
+    if (!_userImageUrlUserNamePairs) {
+        _userImageUrlUserNamePairs = [NSMutableDictionary dictionary];
+    }
+    return _userImageUrlUserNamePairs;
+}
+- (NSMutableDictionary *)userImageUserNamePairs {
+    if (!_userImageUserNamePairs) {
+        _userImageUserNamePairs = [NSMutableDictionary dictionary];
+    }
+    return _userImageUserNamePairs;
+}
 @end

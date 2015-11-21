@@ -100,9 +100,9 @@
     AVQuery *query = [AVUser query];
     [query whereKey:@"username" equalTo:userName];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendsManagerFriendSearchByUserNameStarted)]) {
-        [self.delegate userFriendsManagerFriendSearchByUserNameStarted];
-    }
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendsManagerFriendSearchByUserNameStarted)]) {
+//        [self.delegate userFriendsManagerFriendSearchByUserNameStarted];
+//    }
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
@@ -147,31 +147,84 @@
     }];
 }
 
+- (void)searchFriendByUserNameForChat:(NSString *)userNameForChat result:(void (^)(AVUser *))handle {
+    AVQuery *query = [AVUser query];
+    [query whereKey:CARED_LEANCLOUD_USER_userNameForChat equalTo:userNameForChat];
+    
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(userFriendsManagerFriendSearchByUserNameForScanStarted)]) {
+//        [self.delegate userFriendsManagerFriendSearchByUserNameForScanStarted];
+//    }
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        handle([objects firstObject]);
+        
+    }];
+}
+
+
+
+
 - (BOOL)addFriend:(AVUser *)user {
     AVUser *currentUser = [AVUser currentUser];
-    if (![self reloadAllFriends] || [self reloadAllFriends].count == 0) {
-        [currentUser setObject:@[user.username] forKey:CARED_LEANCLOUD_USER_friendList];
-    } else {
-        [self.allFriendArray addObject:user.username];
-        [currentUser setObject:self.allFriendArray forKey:CARED_LEANCLOUD_USER_friendList];
-    }
-    
-//    NSArray *array = user[CARED_LEANCLOUD_USER_friendList];
-//    if (array.count == 0 || !array) {
-//        [user setObject:@[currentUser] forKey:CARED_LEANCLOUD_USER_friendList];
+//    if (![self reloadAllFriends] || [self reloadAllFriends].count == 0) {
+//        [currentUser setObject:@[user.username] forKey:CARED_LEANCLOUD_USER_friendList];
 //    } else {
-//        NSMutableArray *friendArray = [NSMutableArray arrayWithArray:array];
-//        [friendArray addObject:currentUser];
-//        [user setObject:friendArray forKey:CARED_LEANCLOUD_USER_friendList];
+    BOOL flag = YES;
+    NSMutableArray *array = [NSMutableArray array];
+    if (currentUser[CARED_LEANCLOUD_USER_friendList]) {
+        [array addObjectsFromArray:currentUser[CARED_LEANCLOUD_USER_friendList]];
+    }
+    for (NSString *userName in array) {
+        if ([userName isEqualToString:user.username]) {
+            flag = NO;
+        }
+    }
+    if (flag) {
+        [array addObject:user.username];
+        [currentUser setObject:array forKey:CARED_LEANCLOUD_USER_friendList];
+    }
+    //    }
+    
+    
+    
+    
+    
+    
+    
+    
+//    NSMutableArray *array1 = [NSMutableArray array];
+//    if (user[CARED_LEANCLOUD_USER_friendList]) {
+//        [array1 addObjectsFromArray:user[CARED_LEANCLOUD_USER_friendList]];
 //    }
+//    
+//    BOOL flag1 = YES;
+//    for (NSString *userName in array1) {
+//        if ([userName isEqualToString:currentUser.username]) {
+//            flag1 = NO;
+//        }
+//    }
+//    if (flag1) {
+//        [array1 addObject:currentUser.username];
+//        [user setObject:array1 forKey:CARED_LEANCLOUD_USER_friendList];
+//    }
+    
+    
+    
+    
+    
 //    [user save];
     [currentUser save];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"addFriend" object:nil];
     
     return YES;
 }
 
 - (BOOL)userIsFriend:(AVUser *)user {
-    for (NSString *userNmae in self.allFriendArray) {
+    AVUser *currentUser = [AVUser currentUser];
+    NSArray *friendArray = currentUser[CARED_LEANCLOUD_USER_friendList];
+    for (NSString *userNmae in friendArray) {
         if ([userNmae isEqualToString:user.username]) {
             return YES;
         }

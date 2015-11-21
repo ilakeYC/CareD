@@ -1,4 +1,5 @@
 PODS:
+  - AMap2DMap (3.1.0)
   - AVOSCloud (3.1.6.2)
   - AVOSCloudIM (3.1.6.2):
     - AVOSCloud
@@ -7,6 +8,7 @@ PODS:
   - ZBarSDK (1.3.1)
 
 DEPENDENCIES:
+  - AMap2DMap
   - AVOSCloud
   - AVOSCloudIM
   - libqrencode (~> 3.4.2)
@@ -14,10 +16,11 @@ DEPENDENCIES:
   - ZBarSDK (~> 1.3.1)
 
 SPEC CHECKSUMS:
+  AMap2DMap: a6741139dd16d237713c4fd6cae9a0399ca1fe25
   AVOSCloud: a3cd4fd18e2eba50de63c490cbd59fd8892fddee
   AVOSCloudIM: c19bdeae29803936301b3501f05b40fa107f6370
   libqrencode: 43dc34b89af83ea4b07c409cd8e09c87aa3a1c9f
   RongCloudIMKit: 3ae5f93c8688ad1948472033f475f51650316f13
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

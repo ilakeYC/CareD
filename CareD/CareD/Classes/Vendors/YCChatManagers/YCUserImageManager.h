@@ -46,6 +46,9 @@
 
 ///设置用户头像
 - (void)setUserImage:(UIImage *)image;
+///设置用户头像
+- (void)setUserImage:(UIImage *)image completeBlock:(void(^)(BOOL successed))successed progress:(void(^)(NSInteger progress))progress;
+
 
 ///下载用户头像
 - (void)getCurrentUserImage;
@@ -60,4 +63,6 @@
 - (void)getImageUrlWithUser:(AVUser *)user handel:(void(^)(NSString *URL))URL;
 ///下载用户头像缩略图
 - (void)getImageWithUser:(AVUser *)user handel:(void(^)(UIImage *image))handle;
+
+- (void)resettedUserImage;
 @end

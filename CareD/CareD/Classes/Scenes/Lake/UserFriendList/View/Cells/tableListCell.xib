@@ -30,9 +30,23 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70S-dH-zIs">
-                                        <rect key="frame" x="88" y="53.5" width="208" height="26.5"/>
+                                        <rect key="frame" x="88" y="28" width="208" height="33"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="距离" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaM-X7-yQX">
+                                        <rect key="frame" x="260" y="63" width="35.5" height="17"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="地区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvf-qC-CeK">
+                                        <rect key="frame" x="88" y="63" width="35.5" height="17"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -40,17 +54,21 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.53333333329999999" green="0.74117647060000003" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="70S-dH-zIs" secondAttribute="trailing" constant="8" id="0Vh-DH-lqP"/>
                                     <constraint firstItem="UtB-vh-OYC" firstAttribute="leading" secondItem="dWu-64-Yr7" secondAttribute="leading" constant="8" id="1qT-PX-XwN"/>
                                     <constraint firstAttribute="bottom" secondItem="UtB-vh-OYC" secondAttribute="bottom" constant="8" id="1xb-xP-KGK"/>
                                     <constraint firstItem="UtB-vh-OYC" firstAttribute="top" secondItem="dWu-64-Yr7" secondAttribute="top" constant="8" id="4A5-We-WE9"/>
-                                    <constraint firstItem="70S-dH-zIs" firstAttribute="leading" secondItem="UtB-vh-OYC" secondAttribute="trailing" constant="8" id="RmT-ph-hmi"/>
-                                    <constraint firstAttribute="bottom" secondItem="70S-dH-zIs" secondAttribute="bottom" constant="8.5" id="Wsa-2c-xBk"/>
+                                    <constraint firstItem="70S-dH-zIs" firstAttribute="leading" secondItem="UtB-vh-OYC" secondAttribute="trailing" constant="7.5" id="6F6-ha-XI6"/>
+                                    <constraint firstAttribute="trailing" secondItem="kaM-X7-yQX" secondAttribute="trailing" constant="8" id="9Cm-yp-3mb"/>
+                                    <constraint firstItem="kaM-X7-yQX" firstAttribute="bottom" secondItem="cvf-qC-CeK" secondAttribute="bottom" id="JB2-7A-hHj"/>
+                                    <constraint firstItem="cvf-qC-CeK" firstAttribute="leading" secondItem="UtB-vh-OYC" secondAttribute="trailing" constant="7.5" id="JOC-pw-Sin"/>
+                                    <constraint firstItem="70S-dH-zIs" firstAttribute="centerY" secondItem="dWu-64-Yr7" secondAttribute="centerY" id="UEE-N3-yb6"/>
+                                    <constraint firstAttribute="trailing" secondItem="70S-dH-zIs" secondAttribute="trailing" constant="8" id="V2r-YX-q8g"/>
+                                    <constraint firstItem="cvf-qC-CeK" firstAttribute="top" secondItem="70S-dH-zIs" secondAttribute="bottom" constant="2" id="XOJ-uk-QA8"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dWu-64-Yr7" secondAttribute="trailing" id="3w6-I3-hAe"/>
                             <constraint firstAttribute="bottom" secondItem="dWu-64-Yr7" secondAttribute="bottom" id="WdC-Iq-ZYk"/>
@@ -71,10 +89,12 @@
             <animations/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
+                <outlet property="distanceLabel" destination="kaM-X7-yQX" id="vmk-95-0rg"/>
                 <outlet property="mainContentView" destination="dWu-64-Yr7" id="zpk-fJ-Pm6"/>
                 <outlet property="mainImageView" destination="UtB-vh-OYC" id="tzf-Lw-Dia"/>
                 <outlet property="mainTitleLabel" destination="70S-dH-zIs" id="P4X-WA-YBR"/>
                 <outlet property="shadowView" destination="HSF-xK-MTV" id="z3t-bc-xw3"/>
+                <outlet property="userLocationLabel" destination="cvf-qC-CeK" id="IGc-Iq-W2F"/>
             </connections>
             <point key="canvasLocation" x="184" y="422.5"/>
         </tableViewCell>
