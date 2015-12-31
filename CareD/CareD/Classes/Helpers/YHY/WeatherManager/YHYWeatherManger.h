@@ -24,7 +24,6 @@
 
 + (instancetype)sharedYHYWeatherManager;
 
-///请求天气
 - (void)requestWeatherByCityName:(NSString *)cityName
                             area:(NSString *)area
                            block:(void(^)(UserWeather *model))handle;

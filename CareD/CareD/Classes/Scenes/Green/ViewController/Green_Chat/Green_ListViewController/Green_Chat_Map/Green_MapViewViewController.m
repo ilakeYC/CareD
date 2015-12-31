@@ -50,7 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-   [MAMapServices sharedServices].apiKey = @"bcba50a9645e90b54cb38e5bc5e27010";
+   [MAMapServices sharedServices].apiKey = @"ffeb6e6a0da506b32370452e71e58f56";
 //     添加mapView
     self.mapView =[[MAMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     self.mapView.delegate = self;
@@ -69,7 +69,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     //     逆地理编码
-    [AMapSearchServices sharedServices].apiKey = @"bcba50a9645e90b54cb38e5bc5e27010";
+    [AMapSearchServices sharedServices].apiKey = @"ffeb6e6a0da506b32370452e71e58f56";
     //     构造AMapReGeocodeSearchRequest 对象
     AMapReGeocodeSearchRequest * request = [[AMapReGeocodeSearchRequest alloc] init];
     request.location = [AMapGeoPoint locationWithLatitude:self.cllocation2D.latitude longitude:self.cllocation2D.longitude];

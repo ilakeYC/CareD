@@ -52,7 +52,10 @@
         [manager startReceiveingFriendRequest];
 
         [NSTimer scheduledTimerWithTimeInterval:60 target:manager selector:@selector(startReceiveingFriendRequest) userInfo:nil repeats:YES];
+        
     });
+    
+    
     return manager;
 }
 

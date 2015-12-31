@@ -108,13 +108,6 @@
     self.worningLabel.text = @"用户名被占用";
     [self showWorningLabel];
 }
-//用户名错误警告
-- (void)userNameWithChinese {
-    self.userNameLineView.backgroundColor = CareD_Lake_COLOR_WorningRed;
-    self.worningLabel.text = @"用户名不能含有中文";
-    [self showWorningLabel];
-    [self unChecking];
-}
 //取消用户名错误警告
 - (void)cancelUserNameWrong {
     [UIView animateWithDuration:1 animations:^{
@@ -172,35 +165,14 @@
 ///注册按钮点击
 - (void)signUpButtonAction:(DeformationButton *)sender {
     [self checking];
-    [self performSelector:@selector(signUpButtonActionAfter) withObject:self afterDelay:1.0f];
+    [self performSelector:@selector(signUpButtonActionAfter) withObject:self afterDelay:1.5f];
 }
 
 - (void)signUpButtonActionAfter {
     NSString *email         = self.emainTextField.text;
     NSString *userName      = self.userNameTextField.text;
     NSString *userPassword  = self.passwordTextField.text;
-    NSInteger length = userName.length;
-    BOOL flag = NO;
-    for (int i=0; i<length; ++i)
-    {
-        NSRange range = NSMakeRange(i, 1);
-        NSString *subString = [userName substringWithRange:range];
-        const char *cString = [subString UTF8String];
-        if (strlen(cString) == 3)
-        {
-            flag = YES;
-        }
-    }
-    
-    if (flag) {
-        
-        [self userNameWithChinese];
-        
-    } else {
-        
-        [self.userManager registerUserAndGetToken:userName password:userPassword email:email];
-    }
-    
+    [self.userManager registerUserAndGetToken:userName password:userPassword email:email];
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
