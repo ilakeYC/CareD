@@ -23,9 +23,9 @@
 
 - (void)requestWeatherByCityName:(NSString *)cityName area:(NSString *)area block:(void (^)(UserWeather *))handle
 {
-    NSString *str = [cityName stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-    NSString *urlStr = [NSString stringWithFormat:@"http://op.juhe.cn/onebox/weather/query?cityname=%@&key=c37efe22ee2d29e939ac5aa364f7011b",str];
-    
+//    NSString *str = [cityName stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+    NSString *urlStr = [NSString stringWithFormat:@"http://op.juhe.cn/onebox/weather/query?cityname=%@&key=c37efe22ee2d29e939ac5aa364f7011b",cityName];
+    urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLRequest *requset = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlStr]];
     
