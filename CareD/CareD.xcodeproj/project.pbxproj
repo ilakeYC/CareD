@@ -818,24 +818,8 @@
 				9F29FF5D1BF4C21D00232E8E /* RegisterSettings */,
 				9F12027B1BF06348002C508C /* Login */,
 				9F2D910A1BF0935700BB0330 /* Register */,
-				9F1202611BF04FCB002C508C /* View */,
-				9F1202631BF04FCB002C508C /* ViewController */,
 			);
 			path = Lake;
-			sourceTree = "<group>";
-		};
-		9F1202611BF04FCB002C508C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		9F1202631BF04FCB002C508C /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		9F1202651BF04FCB002C508C /* YHY */ = {
@@ -2259,10 +2243,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yucheng Song (BH7QEVK4SX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yucheng Song (BH7QEVK4SX)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yucheng Song (75693XATVN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yucheng Song (75693XATVN)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2282,7 +2267,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "7b389915-5a6c-412e-9fd0-c96ca029bd32";
+				PROVISIONING_PROFILE = "c6bed84b-b8d3-470e-8f24-62a771c4b331";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2304,10 +2289,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yucheng Song (BH7QEVK4SX)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yucheng Song (BH7QEVK4SX)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yucheng Song (75693XATVN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yucheng Song (75693XATVN)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2320,7 +2306,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "7b389915-5a6c-412e-9fd0-c96ca029bd32";
+				PROVISIONING_PROFILE = "c6bed84b-b8d3-470e-8f24-62a771c4b331";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2332,9 +2318,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yucheng Song (75693XATVN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yucheng Song (75693XATVN)";
 				COMPRESS_PNG_FILES = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2344,7 +2331,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c6bed84b-b8d3-470e-8f24-62a771c4b331";
 			};
 			name = Debug;
 		};
@@ -2354,9 +2341,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Yucheng Song (75693XATVN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Yucheng Song (75693XATVN)";
 				COMPRESS_PNG_FILES = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2366,7 +2354,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c6bed84b-b8d3-470e-8f24-62a771c4b331";
 			};
 			name = Release;
 		};

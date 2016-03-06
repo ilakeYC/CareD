@@ -12,8 +12,8 @@
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key
 {
-    
-    
+    NSLog(@"\n%d,\n%s\n",__LINE__,__FUNCTION__);
+    NSLog(@"CityWeather KVC error: key:%@ 没有找到", key);
 }
 
 

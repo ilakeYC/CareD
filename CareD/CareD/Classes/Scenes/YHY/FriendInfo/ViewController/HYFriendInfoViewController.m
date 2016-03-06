@@ -38,6 +38,7 @@
     }];
     
     userLocationModel *location = [[YCUserManager sharedUserManager] getLocationByUser:self.user];
+    self.friendView.cityLabel.text    = [NSString stringWithFormat:@"%@|%@",location.city,location.area];
     [[YHYWeatherManger sharedYHYWeatherManager] requestWeatherByCityName:location.city area:location.area block:^(UserWeather *model) {
         
         
@@ -71,7 +72,7 @@
         
         
        
-        self.friendView.cityLabel.text = [NSString stringWithFormat:@"%@|%@",location.city,location.area];
+        
         self.friendView.weatherLabel.text = model.weather;
         self.friendView.tempLabel.text    = model.temp;
         self.friendView.airLabel.text     = model.air;

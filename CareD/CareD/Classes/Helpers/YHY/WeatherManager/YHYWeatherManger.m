@@ -21,10 +21,12 @@
     return manager;
 }
 
+///请求对应城市的天气信息
 - (void)requestWeatherByCityName:(NSString *)cityName area:(NSString *)area block:(void (^)(UserWeather *))handle
 {
     NSString *str = [cityName stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     NSString *urlStr = [NSString stringWithFormat:@"http://op.juhe.cn/onebox/weather/query?cityname=%@&key=c37efe22ee2d29e939ac5aa364f7011b",str];
+//    c37efe22ee2d29e939ac5aa364f7011b
     
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLRequest *requset = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlStr]];
@@ -67,10 +69,14 @@
 - (UserWeather *)returnWeatherBy:(NSData *)data
 {
     NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    if ([dictionary[@"reason"] isEqualToString:@"查询不到该城市的信息"]) {
+    if ([dictionary[@"reason"] isEqualToString:@"查询不到该城市的信息"] || [dictionary[@"reason"] isEqualToString:@"暂不支持该城市"]) {
+        return nil;
+    }
+    if (((NSDictionary *)dictionary[@"result"]).count == 0) {
         return nil;
     }
     NSDictionary *dict = dictionary[@"result"];
+    
     
     NSDictionary *dic = dict[@"data"];
     

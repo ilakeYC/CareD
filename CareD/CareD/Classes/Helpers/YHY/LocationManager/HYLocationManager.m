@@ -79,11 +79,15 @@
     [geoCoder reverseGeocodeLocation:manager.location completionHandler:^(NSArray *placemarks, NSError *error) {
         for (CLPlacemark * placemark in placemarks) {
             
-            NSDictionary *test = [placemark addressDictionary];
+//            NSDictionary *test = [placemark addressDictionary];
+            NSLog(@"%@",placemark.locality);
+            NSLog(@"%@",placemark.subLocality);
             //State(城市)  SubLocality(区)
-            self.city = [test objectForKey:@"State"];
-            self.area = [test objectForKey:@"SubLocality"];
-            
+//            self.city = [test objectForKey:@"State"];
+//            self.area = [test objectForKey:@"SubLocality"];
+#warning changed location getter
+            self.city = placemark.locality;
+            self.area = placemark.subLocality;
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 

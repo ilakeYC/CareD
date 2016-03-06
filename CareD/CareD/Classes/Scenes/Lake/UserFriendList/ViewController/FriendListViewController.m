@@ -17,7 +17,20 @@
 #import "YCFuncListView.h"
 #import "TwoCodeView.h"
 
-@interface FriendListViewController ()<YCUserImageManagerDelegate, UserImageViewDelegate,YCFuncListViewDelegate,YCUnreadListViewDelegate,YCFriendRequestListButtonDelegate,YCUserFriendRequestManagerDelegate,YCFriendRequestListButtonDelegate, GreenScannerViewDelegate,HYLocationManagerDelegate, RCIMUserInfoDataSource,RCIMReceiveMessageDelegate>
+@interface FriendListViewController ()
+<
+YCUserImageManagerDelegate,
+UserImageViewDelegate,
+YCFuncListViewDelegate,
+YCUnreadListViewDelegate,
+YCFriendRequestListButtonDelegate,
+YCUserFriendRequestManagerDelegate,
+YCFriendRequestListButtonDelegate,
+GreenScannerViewDelegate,
+HYLocationManagerDelegate,
+RCIMUserInfoDataSource,
+RCIMReceiveMessageDelegate
+>
 
 @property (nonatomic,strong) FriendListView *friendListView;
 
@@ -426,12 +439,15 @@ dispatch_async(dispatch_get_main_queue(), ^{
 
 #pragma mark - 开始获得用户地理位置
 - (void)userLocationByCity:(NSString *)city area:(NSString *)area {
+    self.friendListView.locationLabel.text = [NSString stringWithFormat:@"%@,%@",city,area];
+    self.friendListView.weatherLabel.hidden = YES;
+    self.friendListView.airLabel.hidden = YES;
     [[YHYWeatherManger sharedYHYWeatherManager] requestWeatherByCityName:city area:area block:^(UserWeather *model) {
         UserWeather *weather = model;
-        self.friendListView.locationLabel.text = [NSString stringWithFormat:@"%@,%@",weather.city,weather.area];
-        self.friendListView.weatherLabel.text = weather.tempWeather;
-        self.friendListView.airLabel.text = [NSString stringWithFormat:@"空气质量:%@",weather.air];
-        
+        self.friendListView.weatherLabel.text  = weather.tempWeather;
+        self.friendListView.airLabel.text      = [NSString stringWithFormat:@"空气质量:%@",weather.air];
+        self.friendListView.weatherLabel.hidden = NO;
+        self.friendListView.airLabel.hidden = NO;
     }];
 }
 

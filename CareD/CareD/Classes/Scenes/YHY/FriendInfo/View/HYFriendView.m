@@ -79,20 +79,20 @@
     self.tianqiLabel.text = @"天气:";
     [self addSubview:self.tianqiLabel];
     
-    self.weatherLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.tianqiLabel.kFOriginX + self.tianqiLabel.kFSWidth + 10, self.tianqiLabel.kFOriginY, 60, self.tianqiLabel.kFSHeight)];
+    self.weatherLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.tianqiLabel.kFOriginX + self.tianqiLabel.kFSWidth + 10, self.tianqiLabel.kFOriginY, 120, self.tianqiLabel.kFSHeight)];
     //self.weatherLabel.backgroundColor = [UIColor yellowColor];
     self.weatherLabel.font = [UIFont systemFontOfSize:15];
-    self.weatherLabel.text = @"";
+    self.weatherLabel.text = @"暂时不支持该城市";
     [self addSubview:self.weatherLabel];
     
     self.wenduLanel = [[UILabel alloc] initWithFrame:CGRectMake(self.tianqiLabel.kFOriginX, self.tianqiLabel.kFOriginY + 30, self.tianqiLabel.kFSWidth, self.tianqiLabel.kFSHeight)];
     self.wenduLanel.text = @"温度:";
     [self addSubview:self.wenduLanel];
     
-    self.tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.wenduLanel.kFOriginX + self.wenduLanel.kFSWidth + 10, self.wenduLanel.kFOriginY, 60, self.wenduLanel.kFSHeight)];
+    self.tempLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.wenduLanel.kFOriginX + self.wenduLanel.kFSWidth + 10, self.wenduLanel.kFOriginY, 120, self.wenduLanel.kFSHeight)];
    // self.tempLabel.backgroundColor = [UIColor yellowColor];
     self.tempLabel.font = [UIFont systemFontOfSize:15];
-    self.tempLabel.text = @"";
+    self.tempLabel.text = @"暂时不支持该城市";
     [self addSubview:self.tempLabel];
     
     
@@ -100,10 +100,10 @@
     self.kongqiLabel.text = @"空气质量:";
     [self addSubview:self.kongqiLabel];
     
-    self.airLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.kongqiLabel.kFOriginX + self.kongqiLabel.kFSWidth + 10, self.kongqiLabel.kFOriginY, 80, self.kongqiLabel.kFSHeight)];
+    self.airLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.kongqiLabel.kFOriginX + self.kongqiLabel.kFSWidth + 10, self.kongqiLabel.kFOriginY, 120, self.kongqiLabel.kFSHeight)];
     //self.airLabel.backgroundColor = [UIColor yellowColor];
     self.airLabel.font = [UIFont systemFontOfSize:15];
-    self.airLabel.text = @"";
+    self.airLabel.text = @"暂时不支持该城市";
     [self addSubview:self.airLabel];
 
     

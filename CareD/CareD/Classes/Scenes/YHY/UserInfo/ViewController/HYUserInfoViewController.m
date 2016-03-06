@@ -58,10 +58,9 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self.view addSubview:self.tableView];
-    self.tableView.delegate = self;
+    self.tableView.delegate   = self;
     self.tableView.dataSource = self;
-    
-    self.tableView.bounces = NO;
+    self.tableView.bounces    = NO;
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"HYUserSettingTableViewCell" bundle:nil] forCellReuseIdentifier:kUserSettingTVCellIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"HYWeatherTableViewCell" bundle:nil] forCellReuseIdentifier:kWeatherTVCellIdentifier];
@@ -142,13 +141,6 @@
         [self.navigationController pushViewController:userSettingsVC animated:YES];
     }
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 
 @end

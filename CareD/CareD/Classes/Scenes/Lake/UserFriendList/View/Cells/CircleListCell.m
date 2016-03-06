@@ -41,9 +41,11 @@
     _user = user;
     self.userNickNameLabel.text = user[@"nickName"];
     userLocationModel *locationModel = [[YCUserManager sharedUserManager] getLocationByUser:user];
+    self.userLocationLabel.text = [NSString stringWithFormat:@"%@,%@",locationModel.city,locationModel.area];
+    self.userWeatherLabel.text = [NSString stringWithFormat:@"天气：暂时不支持该城市"];
+    self.userAirLabel.text = [NSString stringWithFormat:@"空气质量：暂时不支持该城市"];
+    self.userTempLabel.text = [NSString stringWithFormat:@"温度：暂时不支持该城市"];
     [[YHYWeatherManger sharedYHYWeatherManager] requestWeatherByCityName:locationModel.city area:locationModel.area block:^(UserWeather *model) {
-       
-        self.userLocationLabel.text = [NSString stringWithFormat:@"%@,%@",locationModel.city,locationModel.area];
         self.userWeatherLabel.text = [NSString stringWithFormat:@"天气：%@",model.weather];
         self.userAirLabel.text = [NSString stringWithFormat:@"空气质量：%@",model.air];
         if ([model.air isEqualToString:@"重度污染"]) {
