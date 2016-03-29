@@ -33,13 +33,13 @@
 
 @implementation UserSettingsViewController
 
-static NSString *const userImageCellID = @"userImageCell";
+static NSString *const userImageCellID    = @"userImageCell";
 static NSString *const userNickNameCellID = @"userNickNameCell";
-static NSString *const userNameCellID = @"userNameCell";
-static NSString *const userScannerCellID = @"scannerCell";
-static NSString *const userEmailCellID = @"emainCell";
+static NSString *const userNameCellID     = @"userNameCell";
+static NSString *const userScannerCellID  = @"scannerCell";
+static NSString *const userEmailCellID    = @"emainCell";
 static NSString *const userPasswordCellID = @"resetPasswordCell";
-static NSString *const signoutCellID = @"signoutCell";
+static NSString *const signoutCellID      = @"signoutCell";
 
 - (void)loadView {
     self.userSettingsView = [[UserSettingsView alloc] initWithFrame:CareD_Lake_MainScreenBounds];
